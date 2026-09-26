@@ -1,0 +1,3180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>FUNDMORE | Finance & Funding Solutions</title>
+  <meta name="description" content="FUNDMORE, a division of AR Consultancy, provides structured finance and funding assistance including business finance, project finance, MSME funding, LAP, machinery finance, working capital, home loans and affordable housing finance.">
+  
+  <!-- Open Graph Metadata -->
+  <meta property="og:title" content="FUNDMORE | Finance & Funding Solutions">
+  <meta property="og:description" content="FUNDMORE, a division of AR Consultancy, provides structured financial assistance and lender coordination across key markets.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/IMG-20260926-WA0002.jpg">
+  <link rel="canonical" href="#">
+
+  <!-- Google Fonts: Plus Jakarta Sans & Space Grotesk -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       DESIGN TOKENS & RESET
+       ========================================================================== */
+    :root {
+      --purple-deep: #5B21D0;
+      --purple-electric: #6D35E8;
+      --purple-light: #8B5CF6;
+      --purple-lavender: #F4F0FF;
+      --near-black: #111018;
+      --dark-charcoal: #1C1A24;
+      --white: #FFFFFF;
+      --soft-gray: #F7F7FA;
+      --border-light: rgba(91, 33, 208, 0.12);
+      --border-dark: rgba(255, 255, 255, 0.12);
+      --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-display: 'Space Grotesk', var(--font-main);
+      --ease: cubic-bezier(0.16, 1, 0.3, 1);
+      --transition-fast: 0.2s var(--ease);
+      --transition-base: 0.35s var(--ease);
+      --container-max: 1280px;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: var(--font-main);
+      color: var(--near-black);
+      background-color: var(--white);
+      line-height: 1.6;
+      overflow-x: clip;
+      width: 100%;
+      position: relative;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    img, svg {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      background: none;
+      outline: none;
+    }
+
+    button:focus-visible, a:focus-visible {
+      outline: 2px solid var(--purple-electric);
+      outline-offset: 3px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--container-max);
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: clamp(1.25rem, 4vw, 2.5rem);
+      padding-right: clamp(1.25rem, 4vw, 2.5rem);
+    }
+
+    /* TYPOGRAPHY UTILITIES */
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-display);
+      font-size: 0.8125rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--purple-deep);
+      margin-bottom: 1rem;
+    }
+
+    .eyebrow::before {
+      content: "";
+      display: inline-block;
+      width: 12px;
+      height: 2px;
+      background: currentColor;
+    }
+
+    .eyebrow.light {
+      color: var(--purple-lavender);
+    }
+
+    h1, h2, h3, h4 {
+      font-family: var(--font-display);
+      line-height: 1.15;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 3.8vw, 3.25rem);
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-desc {
+      font-size: clamp(1.05rem, 1.2vw, 1.25rem);
+      color: #555263;
+      max-width: 680px;
+      margin-bottom: 2.5rem;
+      line-height: 1.65;
+    }
+
+    /* BUTTONS */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      font-family: var(--font-display);
+      font-size: 0.9375rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 1.1rem 2.2rem;
+      border-radius: 8px;
+      transition: all var(--transition-fast);
+      position: relative;
+      text-align: center;
+    }
+
+    .btn-primary {
+      background-color: var(--purple-deep);
+      color: var(--white);
+      border: 1px solid var(--purple-deep);
+      box-shadow: 0 4px 20px rgba(91, 33, 208, 0.25);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--purple-electric);
+      border-color: var(--purple-electric);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(91, 33, 208, 0.35);
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      color: var(--purple-deep);
+      border: 1.5px solid var(--purple-deep);
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--purple-lavender);
+      transform: translateY(-2px);
+    }
+
+    .btn-white {
+      background-color: var(--white);
+      color: var(--purple-deep);
+      border: 1px solid var(--white);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-white:hover {
+      background-color: var(--purple-lavender);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary-white {
+      background-color: transparent;
+      color: var(--white);
+      border: 1.5px solid var(--white);
+    }
+
+    .btn-secondary-white:hover {
+      background-color: rgba(255, 255, 255, 0.12);
+      transform: translateY(-2px);
+    }
+
+    /* ==========================================================================
+       STICKY NAVIGATION
+       ========================================================================== */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background-color: var(--white);
+      transition: all var(--transition-base);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .header.scrolled {
+      padding-top: 0.2rem;
+      padding-bottom: 0.2rem;
+      box-shadow: 0 10px 30px rgba(17, 16, 24, 0.08);
+      border-bottom-color: transparent;
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 80px;
+      transition: height var(--transition-base);
+    }
+
+    .header.scrolled .nav-container {
+      height: 68px;
+    }
+
+    .brand-wrap {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      text-decoration: none;
+    }
+
+    .brand-logo-img {
+      height: 48px;
+      width: auto;
+      object-fit: contain;
+      border-radius: 4px;
+      display: block;
+    }
+
+    .brand-fallback {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--white);
+      border: 2px solid var(--purple-deep);
+      padding: 0.35rem 0.75rem;
+      border-radius: 4px;
+    }
+
+    .brand-fallback-text {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--purple-deep);
+      letter-spacing: 0.08em;
+    }
+
+    .brand-meta {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-title {
+      font-family: var(--font-display);
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: var(--purple-deep);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      line-height: 1.1;
+    }
+
+    .brand-sub {
+      font-size: 0.65rem;
+      color: #6a6777;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-link {
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--near-black);
+      position: relative;
+      transition: color var(--transition-fast);
+      padding: 0.5rem 0;
+    }
+
+    .nav-link:hover {
+      color: var(--purple-electric);
+    }
+
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--purple-electric);
+      transition: width var(--transition-fast);
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      padding: 0.75rem 1.4rem;
+      font-size: 0.84rem;
+      border-radius: 6px;
+    }
+
+    .mobile-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 44px;
+      height: 44px;
+      padding: 10px;
+      border-radius: 6px;
+      background: var(--purple-lavender);
+    }
+
+    .mobile-toggle span {
+      display: block;
+      height: 2px;
+      width: 100%;
+      background: var(--purple-deep);
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .mobile-toggle.active span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+    .mobile-toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
+    .mobile-toggle.active span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* MOBILE DRAWER */
+    .mobile-nav {
+      position: fixed;
+      top: 80px;
+      left: 0;
+      width: 100%;
+      height: calc(100vh - 80px);
+      background: var(--white);
+      z-index: 999;
+      padding: 2rem clamp(1.25rem, 4vw, 2.5rem);
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      transform: translateX(100%);
+      transition: transform 0.35s var(--ease);
+      overflow-y: auto;
+      border-top: 1px solid var(--border-light);
+    }
+
+    .mobile-nav.open {
+      transform: translateX(0);
+    }
+
+    .mobile-nav .nav-link {
+      font-size: 1.25rem;
+      font-family: var(--font-display);
+      font-weight: 700;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      display: block;
+    }
+
+    .mobile-nav-cta {
+      margin-top: 1rem;
+      width: 100%;
+    }
+
+    /* ==========================================================================
+       HERO SECTION
+       ========================================================================== */
+    .hero-section {
+      background-color: var(--white);
+      padding: clamp(3rem, 6vw, 6rem) 0 clamp(2.5rem, 5vw, 4.5rem);
+      position: relative;
+      border-bottom: 1px solid var(--border-light);
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: clamp(2rem, 5vw, 4rem);
+      align-items: center;
+    }
+
+    .hero-content {
+      max-width: 650px;
+    }
+
+    .hero-headline {
+      font-size: clamp(2.35rem, 5.2vw, 4.25rem);
+      font-weight: 800;
+      line-height: 1.05;
+      text-transform: uppercase;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.5rem;
+      color: var(--near-black);
+    }
+
+    .hero-headline .text-purple {
+      color: var(--purple-deep);
+      position: relative;
+      display: inline-block;
+    }
+
+    .hero-desc {
+      font-size: clamp(1rem, 1.2vw, 1.15rem);
+      line-height: 1.65;
+      color: #4b4859;
+      margin-bottom: 2.25rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .hero-trust-list {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.5rem 0.75rem;
+      font-size: 0.8125rem;
+      font-weight: 700;
+      font-family: var(--font-display);
+      color: #6c687e;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .hero-trust-list span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .hero-trust-list span:not(:last-child)::after {
+      content: "•";
+      color: var(--purple-light);
+    }
+
+    /* Abstract Financial Composition (CSS Visual) */
+    .hero-visual-card {
+      background: var(--purple-lavender);
+      border: 1px solid rgba(91, 33, 208, 0.2);
+      border-radius: 16px;
+      padding: clamp(1.5rem, 3vw, 2.5rem);
+      position: relative;
+      box-shadow: 0 20px 40px rgba(91, 33, 208, 0.08);
+      overflow: hidden;
+    }
+
+    .hero-visual-card::before {
+      content: "";
+      position: absolute;
+      top: -30%;
+      right: -20%;
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle, rgba(109, 53, 232, 0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .flow-diagram {
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .flow-step-node {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      background: var(--white);
+      border: 1px solid rgba(91, 33, 208, 0.15);
+      border-radius: 10px;
+      padding: 0.95rem 1.25rem;
+      box-shadow: 0 4px 12px rgba(17, 16, 24, 0.04);
+      position: relative;
+      transition: transform var(--transition-fast), border-color var(--transition-fast);
+    }
+
+    .flow-step-node:hover {
+      transform: translateX(6px);
+      border-color: var(--purple-deep);
+    }
+
+    .flow-icon-box {
+      width: 42px;
+      height: 42px;
+      min-width: 42px;
+      background: var(--purple-deep);
+      color: var(--white);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .flow-node-content {
+      flex: 1;
+    }
+
+    .flow-node-title {
+      font-family: var(--font-display);
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--near-black);
+      line-height: 1.2;
+    }
+
+    .flow-node-sub {
+      font-size: 0.78rem;
+      color: #676378;
+    }
+
+    .flow-connector-line {
+      position: absolute;
+      left: 36px;
+      top: 30px;
+      bottom: 30px;
+      width: 2px;
+      background: repeating-linear-gradient(to bottom, var(--purple-light) 0, var(--purple-light) 6px, transparent 6px, transparent 12px);
+      z-index: 1;
+    }
+
+    .hero-micro-disclaimer {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border-light);
+      font-size: 0.8125rem;
+      line-height: 1.55;
+      color: #6e6b7d;
+    }
+
+    /* ==========================================================================
+       INTRO / EDITORIAL ABOUT
+       ========================================================================== */
+    .section-about {
+      background-color: var(--white);
+      padding: clamp(4rem, 7vw, 7rem) 0;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .about-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(2rem, 5vw, 4.5rem);
+      align-items: center;
+    }
+
+    .editorial-pillars {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      position: relative;
+    }
+
+    .pillar-box {
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+      padding: 1.75rem 1.5rem;
+      background: var(--soft-gray);
+      position: relative;
+      transition: all var(--transition-fast);
+    }
+
+    .pillar-box:hover {
+      border-color: var(--purple-deep);
+      background: var(--purple-lavender);
+      transform: translateY(-3px);
+    }
+
+    .pillar-word {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      color: var(--purple-deep);
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .pillar-word::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--purple-light);
+      opacity: 0.4;
+    }
+
+    .pillar-desc {
+      font-size: 0.875rem;
+      color: #555263;
+      line-height: 1.5;
+    }
+
+    /* ==========================================================================
+       GEOGRAPHIC MARKETS SECTION
+       ========================================================================== */
+    .section-markets {
+      background-color: var(--purple-lavender);
+      padding: clamp(4rem, 7vw, 6.5rem) 0;
+      border-bottom: 1px solid rgba(91, 33, 208, 0.15);
+    }
+
+    .markets-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(2rem, 5vw, 4rem);
+      align-items: center;
+    }
+
+    .markets-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+    }
+
+    .market-card {
+      background: var(--white);
+      border: 1px solid rgba(91, 33, 208, 0.16);
+      border-radius: 12px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      box-shadow: 0 4px 15px rgba(91, 33, 208, 0.05);
+      position: relative;
+    }
+
+    .market-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: var(--font-display);
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--purple-deep);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .market-badge::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--purple-deep);
+    }
+
+    .market-name {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--near-black);
+      letter-spacing: -0.01em;
+    }
+
+    .market-focus {
+      font-size: 0.85rem;
+      color: #656173;
+    }
+
+    /* SVG Map Graphic */
+    .map-graphic-box {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 2rem;
+      border: 1px solid rgba(91, 33, 208, 0.2);
+      box-shadow: 0 10px 30px rgba(91, 33, 208, 0.06);
+      text-align: center;
+    }
+
+    /* ==========================================================================
+       FINANCE SOLUTIONS (INTERACTIVE DESKTOP / MOBILE ACCORDION)
+       ========================================================================== */
+    .section-solutions {
+      background-color: var(--white);
+      padding: clamp(4rem, 7vw, 7rem) 0;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .solutions-system {
+      display: grid;
+      grid-template-columns: 380px 1fr;
+      gap: 2.5rem;
+      margin-top: 2rem;
+      background: var(--soft-gray);
+      border-radius: 16px;
+      padding: 1.5rem;
+      border: 1px solid var(--border-light);
+    }
+
+    .solutions-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      max-height: 560px;
+      overflow-y: auto;
+      padding-right: 0.5rem;
+    }
+
+    .solutions-nav::-webkit-scrollbar {
+      width: 4px;
+    }
+    .solutions-nav::-webkit-scrollbar-thumb {
+      background: var(--purple-light);
+      border-radius: 4px;
+    }
+
+    .service-nav-btn {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-align: left;
+      width: 100%;
+      padding: 0.95rem 1.15rem;
+      background: var(--white);
+      border: 1px solid transparent;
+      border-radius: 8px;
+      font-size: 0.9375rem;
+      font-weight: 700;
+      font-family: var(--font-display);
+      color: var(--near-black);
+      transition: all var(--transition-fast);
+    }
+
+    .service-nav-btn:hover {
+      border-color: var(--purple-deep);
+      color: var(--purple-deep);
+    }
+
+    .service-nav-btn.active {
+      background: var(--purple-deep);
+      color: var(--white);
+      border-color: var(--purple-deep);
+      box-shadow: 0 4px 15px rgba(91, 33, 208, 0.25);
+    }
+
+    .service-display-panel {
+      background: var(--white);
+      border-radius: 12px;
+      border: 1px solid var(--border-light);
+      padding: clamp(2rem, 4vw, 3.5rem);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 480px;
+    }
+
+    .service-meta-tag {
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: var(--purple-deep);
+      letter-spacing: 0.05em;
+      margin-bottom: 0.75rem;
+    }
+
+    .service-panel-heading {
+      font-size: clamp(1.75rem, 2.5vw, 2.35rem);
+      margin-bottom: 1.25rem;
+      color: var(--near-black);
+    }
+
+    .service-panel-desc {
+      font-size: 1.05rem;
+      color: #555263;
+      margin-bottom: 1.75rem;
+      line-height: 1.6;
+    }
+
+    .service-checklist {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0.85rem;
+      margin-bottom: 2rem;
+    }
+
+    .service-checklist li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--dark-charcoal);
+    }
+
+    .service-checklist li::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      background: var(--purple-deep);
+      border-radius: 50%;
+      margin-top: 8px;
+      flex-shrink: 0;
+    }
+
+    /* Mobile Accordion (visible only on mobile) */
+    .solutions-accordion-mobile {
+      display: none;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .acc-item {
+      border: 1px solid var(--border-light);
+      border-radius: 10px;
+      background: var(--white);
+      overflow: hidden;
+    }
+
+    .acc-header {
+      width: 100%;
+      padding: 1.15rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--near-black);
+      background: var(--soft-gray);
+      text-align: left;
+    }
+
+    .acc-header.active {
+      background: var(--purple-lavender);
+      color: var(--purple-deep);
+    }
+
+    .acc-body {
+      padding: 1.25rem;
+      display: none;
+      border-top: 1px solid var(--border-light);
+      background: var(--white);
+    }
+
+    .acc-body.open {
+      display: block;
+    }
+
+    /* ==========================================================================
+       BUSINESS & PROJECT FINANCE (DEEP PURPLE THEME)
+       ========================================================================== */
+    .section-dark-finance {
+      background-color: var(--purple-deep);
+      color: var(--white);
+      padding: clamp(4rem, 7vw, 7rem) 0;
+      position: relative;
+    }
+
+    .dark-grid-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: clamp(2rem, 5vw, 4.5rem);
+      margin-bottom: 4.5rem;
+    }
+
+    .dark-tagline {
+      font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+      line-height: 1.05;
+      font-family: var(--font-display);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+    }
+
+    .dark-tagline span {
+      color: var(--purple-lavender);
+    }
+
+    .sub-section-title {
+      font-size: 1.35rem;
+      font-family: var(--font-display);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1.25rem;
+      color: var(--purple-lavender);
+      border-left: 3px solid var(--purple-light);
+      padding-left: 0.75rem;
+    }
+
+    .items-tag-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .item-tag {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid var(--border-dark);
+      padding: 0.65rem 1.15rem;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: background var(--transition-fast);
+    }
+
+    .item-tag:hover {
+      background: rgba(255, 255, 255, 0.16);
+      border-color: var(--purple-lavender);
+    }
+
+    /* ==========================================================================
+       PROJECT ASSESSMENT / UNDERSTANDING REQUIREMENT (DIAGRAM)
+       ========================================================================== */
+    .section-assessment {
+      background-color: var(--white);
+      padding: clamp(4rem, 7vw, 7rem) 0;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .nodes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+      margin-top: 2rem;
+    }
+
+    .assessment-node {
+      border: 1px solid var(--border-light);
+      background: var(--soft-gray);
+      border-radius: 10px;
+      padding: 1.5rem;
+      position: relative;
+      transition: transform var(--transition-fast), border-color var(--transition-fast);
+    }
+
+    .assessment-node:hover {
+      transform: translateY(-4px);
+      border-color: var(--purple-deep);
+      background: var(--white);
+      box-shadow: 0 10px 25px rgba(91, 33, 208, 0.06);
+    }
+
+    .node-num {
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--purple-deep);
+      margin-bottom: 0.5rem;
+    }
+
+    .node-title {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--near-black);
+      letter-spacing: -0.01em;
+    }
+
+    /* ==========================================================================
+       FUNDING PROCESS JOURNEY
+       ========================================================================== */
+    .section-process {
+      background-color: var(--white);
+      padding: clamp(4rem, 7vw, 7rem) 0;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .process-timeline {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 1.25rem;
+      position: relative;
+      margin-top: 3.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .process-timeline::before {
+      content: "";
+      position: absolute;
+      top: 35px;
+      left: 30px;
+      right: 30px;
+      height: 2px;
+      background: var(--border-light);
+      z-index: 1;
+    }
+
+    .process-step {
+      position: relative;
+      z-index: 2;
+      background: var(--white);
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+      padding: 1.5rem 1.15rem;
+      text-align: left;
+      transition: transform var(--transition-fast), border-color var(--transition-fast);
+    }
+
+    .process-step:hover {
+      border-color: var(--purple-deep);
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(91, 33, 208, 0.08);
+    }
+
+    .process-step-indicator {
+      width: 44px;
+      height: 44px;
+      border-radius: 8px;
+      background: var(--purple-lavender);
+      color: var(--purple-deep);
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+      border: 1px solid rgba(91, 33, 208, 0.2);
+    }
+
+    .process-step-title {
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--near-black);
+      line-height: 1.25;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+
+    .process-subline {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem 1.25rem;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: var(--purple-deep);
+      background: var(--purple-lavender);
+      padding: 1.2rem 1.5rem;
+      border-radius: 8px;
+      letter-spacing: 0.05em;
+    }
+
+    .process-subline span:not(:last-child)::after {
+      content: "→";
+      margin-left: 1.25rem;
+      color: var(--purple-light);
+    }
+
+    /* ==========================================================================
+       WHY FUNDMORE (EDITORIAL BLOCKS)
+       ========================================================================== */
+    .section-why {
+      background-color: var(--purple-lavender);
+      padding: clamp(4rem, 7vw, 7rem) 0;
+      border-bottom: 1px solid rgba(91, 33, 208, 0.15);
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.75rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .why-block {
+      background: var(--white);
+      border: 1px solid rgba(91, 33, 208, 0.18);
+      border-radius: 12px;
+      padding: 2.5rem clamp(1.5rem, 3vw, 2.5rem);
+      box-shadow: 0 6px 20px rgba(91, 33, 208, 0.04);
+    }
+
+    .why-num {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--purple-deep);
+      margin-bottom: 0.75rem;
+      line-height: 1;
+    }
+
+    .why-title {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      margin-bottom: 1rem;
+      color: var(--near-black);
+    }
+
+    .why-text {
+      color: #555263;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .transparent-comm-banner {
+      background: var(--white);
+      border: 1px solid var(--purple-deep);
+      border-radius: 12px;
+      padding: 2rem;
+    }
+
+    .comm-title {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--purple-deep);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 1rem;
+    }
+
+    .comm-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .comm-tag {
+      background: var(--purple-lavender);
+      color: var(--purple-deep);
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 0.45rem 0.9rem;
+      border-radius: 6px;
+    }
+
+    /* ==========================================================================
+       PARTNER NETWORK
+       ========================================================================== */
+    .section-partners {
+      background-color: var(--white);
+      padding: clamp(3.5rem, 6vw, 6rem) 0;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .partners-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      margin: 2.5rem 0 2rem;
+    }
+
+    .partner-card {
+      border: 1px solid var(--border-light);
+      background: var(--soft-gray);
+      border-radius: 10px;
+      padding: 2.2rem 1.5rem;
+      text-align: center;
+      transition: all var(--transition-fast);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 110px;
+    }
+
+    .partner-card:hover {
+      border-color: var(--purple-deep);
+      background: var(--white);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 18px rgba(91, 33, 208, 0.08);
+    }
+
+    .partner-name {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--near-black);
+      letter-spacing: -0.01em;
+    }
+
+    .partner-note {
+      font-size: 0.925rem;
+      color: #656174;
+      line-height: 1.6;
+      max-width: 800px;
+    }
+
+    /* ==========================================================================
+       MANAGEMENT TEAM
+       ========================================================================== */
+    .section-team {
+      background-color: var(--white);
+      padding: clamp(4rem, 7vw, 7rem) 0;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin-top: 2.5rem;
+    }
+
+    .team-card {
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+      padding: 2.5rem;
+      background: var(--soft-gray);
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .team-header-row {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    .team-initials {
+      width: 64px;
+      height: 64px;
+      min-width: 64px;
+      background: var(--purple-deep);
+      color: var(--white);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.35rem;
+      letter-spacing: 0.05em;
+    }
+
+    .team-name {
+      font-family: var(--font-display);
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: var(--near-black);
+      line-height: 1.2;
+    }
+
+    .team-role {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--purple-electric);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .team-detail {
+      font-size: 0.95rem;
+      color: #555263;
+      line-height: 1.6;
+    }
+
+    .team-zone-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-display);
+      font-size: 0.8125rem;
+      font-weight: 700;
+      color: var(--purple-deep);
+      background: var(--purple-lavender);
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      width: fit-content;
+    }
+
+    /* ==========================================================================
+       ELIGIBILITY & DOCUMENTATION
+       ========================================================================== */
+    .section-eligibility {
+      background-color: var(--purple-lavender);
+      padding: clamp(4rem, 7vw, 7rem) 0;
+      border-bottom: 1px solid rgba(91, 33, 208, 0.15);
+    }
+
+    .eligibility-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .checklist-card {
+      background: var(--white);
+      border: 1px solid rgba(91, 33, 208, 0.16);
+      border-radius: 12px;
+      padding: clamp(1.75rem, 3vw, 2.5rem);
+      box-shadow: 0 6px 20px rgba(91, 33, 208, 0.04);
+    }
+
+    .checklist-title {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1.5px solid var(--purple-lavender);
+      color: var(--near-black);
+    }
+
+    .two-col-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+    }
+
+    .two-col-list li {
+      font-size: 0.925rem;
+      color: #3e3b4b;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+    }
+
+    .two-col-list li::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      background: var(--purple-deep);
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+
+    /* ==========================================================================
+       SPECIFIC PRODUCT SPOTLIGHTS: LAP, MACHINERY, HOME
+       ========================================================================== */
+    .section-spotlight {
+      padding: clamp(4rem, 7vw, 6.5rem) 0;
+      border-bottom: 1px solid var(--border-light);
+      background: var(--white);
+    }
+
+    .spotlight-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(2rem, 5vw, 4rem);
+      align-items: center;
+    }
+
+    .spotlight-card {
+      background: var(--soft-gray);
+      border: 1px solid var(--border-light);
+      border-radius: 14px;
+      padding: 2.25rem;
+    }
+
+    .spotlight-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin: 1.5rem 0;
+    }
+
+    .spotlight-pill {
+      background: var(--white);
+      border: 1px solid var(--border-light);
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--near-black);
+    }
+
+    .process-mini-flow {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.8125rem;
+      color: var(--purple-deep);
+      margin-top: 1.5rem;
+    }
+
+    .process-mini-flow span:not(:last-child)::after {
+      content: "→";
+      margin-left: 0.5rem;
+      color: var(--purple-light);
+    }
+
+    /* ==========================================================================
+       FAQ ACCORDION
+       ========================================================================== */
+    .section-faq {
+      background-color: var(--white);
+      padding: clamp(4rem, 7vw, 7rem) 0;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .faq-list {
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .faq-item {
+      border: 1px solid var(--border-light);
+      border-radius: 10px;
+      overflow: hidden;
+      background: var(--white);
+      transition: border-color var(--transition-fast);
+    }
+
+    .faq-item:hover {
+      border-color: var(--purple-deep);
+    }
+
+    .faq-trigger {
+      width: 100%;
+      text-align: left;
+      padding: 1.4rem 1.6rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--soft-gray);
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--near-black);
+      gap: 1rem;
+    }
+
+    .faq-trigger.active {
+      background: var(--purple-lavender);
+      color: var(--purple-deep);
+    }
+
+    .faq-chevron {
+      width: 12px;
+      height: 12px;
+      border-right: 2px solid currentColor;
+      border-bottom: 2px solid currentColor;
+      transform: rotate(45deg);
+      transition: transform var(--transition-fast);
+      flex-shrink: 0;
+    }
+
+    .faq-trigger.active .faq-chevron {
+      transform: rotate(-135deg);
+    }
+
+    .faq-content {
+      padding: 1.5rem 1.6rem;
+      display: none;
+      line-height: 1.65;
+      color: #555263;
+      border-top: 1px solid var(--border-light);
+    }
+
+    .faq-content.open {
+      display: block;
+    }
+
+    /* ==========================================================================
+       IMPORTANT DISCLAIMER BANNER
+       ========================================================================== */
+    .section-disclaimer {
+      background-color: #FAF9FE;
+      padding: clamp(3rem, 5vw, 4.5rem) 0;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .disclaimer-card {
+      border-left: 4px solid var(--purple-deep);
+      background: var(--white);
+      padding: 2rem 2.5rem;
+      border-radius: 0 12px 12px 0;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    }
+
+    .disclaimer-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+      color: var(--purple-deep);
+    }
+
+    .disclaimer-card p {
+      font-size: 0.95rem;
+      color: #535061;
+      line-height: 1.65;
+      margin-bottom: 0.75rem;
+    }
+    
+    .disclaimer-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ==========================================================================
+       FINAL CTA (DEEP PURPLE)
+       ========================================================================== */
+    .section-final-cta {
+      background-color: var(--purple-deep);
+      color: var(--white);
+      padding: clamp(4.5rem, 8vw, 8rem) 0;
+      text-align: center;
+      position: relative;
+    }
+
+    .cta-container {
+      max-width: 840px;
+      margin: 0 auto;
+    }
+
+    .final-headline {
+      font-size: clamp(2.35rem, 5vw, 4rem);
+      margin-bottom: 1.5rem;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+
+    .final-desc {
+      font-size: clamp(1.05rem, 1.3vw, 1.25rem);
+      color: var(--purple-lavender);
+      line-height: 1.65;
+      margin-bottom: 2.5rem;
+    }
+
+    .cta-buttons-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.25rem;
+      margin-bottom: 3rem;
+    }
+
+    .cta-contact-strip {
+      display: inline-flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem clamp(1rem, 3vw, 2.5rem);
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid var(--border-dark);
+      padding: 1.1rem 2rem;
+      border-radius: 12px;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.05rem;
+    }
+
+    .cta-contact-strip a {
+      color: var(--white);
+      transition: color var(--transition-fast);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .cta-contact-strip a:hover {
+      color: var(--purple-lavender);
+    }
+
+    /* ==========================================================================
+       FOOTER
+       ========================================================================== */
+    .site-footer {
+      background-color: var(--near-black);
+      color: #A09EAE;
+      padding: clamp(4rem, 6vw, 6rem) 0 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+      gap: clamp(2rem, 4vw, 3.5rem);
+      margin-bottom: 4rem;
+    }
+
+    .footer-brand-title {
+      font-family: var(--font-display);
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: 0.06em;
+      margin-bottom: 0.25rem;
+    }
+
+    .footer-tagline {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--purple-light);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.25rem;
+    }
+
+    .footer-subbrand {
+      font-size: 0.8rem;
+      color: #797686;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-col-title {
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--white);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 1.25rem;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      font-size: 0.875rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--white);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.8125rem;
+      color: #726f80;
+    }
+
+    /* ==========================================================================
+       MEDIA QUERIES (GENUINE MOBILE-FIRST HARDENING)
+       ========================================================================== */
+    @media (max-width: 1024px) {
+      .hero-grid,
+      .about-layout,
+      .markets-wrapper,
+      .spotlight-grid,
+      .eligibility-grid,
+      .dark-grid-layout {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .process-timeline {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .process-timeline::before {
+        display: none;
+      }
+
+      .partners-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 860px) {
+      .nav-menu,
+      .nav-cta {
+        display: none;
+      }
+
+      .mobile-toggle {
+        display: flex;
+      }
+
+      .solutions-system {
+        display: none;
+      }
+
+      .solutions-accordion-mobile {
+        display: flex;
+      }
+
+      .process-timeline {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .why-grid,
+      .team-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .editorial-pillars {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .markets-list,
+      .partners-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .hero-actions,
+      .cta-buttons-wrap {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .cta-contact-strip {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+      }
+
+      .process-subline span:not(:last-child)::after {
+        display: none;
+      }
+      .process-subline {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       STICKY NAVIGATION
+       ========================================================================== -->
+  <header class="header" id="site-header">
+    <div class="container nav-container">
+      <a href="#home" class="brand-wrap" aria-label="FUNDMORE Homepage">
+        <img 
+          src="images/IMG-20260926-WA0002.jpg" 
+          alt="FUNDMORE Logo" 
+          class="brand-logo-img"
+          onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='flex';"
+        >
+        <div id="logo-fallback" class="brand-fallback" style="display: none;">
+          <span class="brand-fallback-text">FUNDMORE</span>
+        </div>
+        <div class="brand-meta">
+          <span class="brand-title">FUNDMORE</span>
+          <span class="brand-sub">A Division of AR Consultancy</span>
+        </div>
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li><a href="#home" class="nav-link">Home</a></li>
+          <li><a href="#solutions" class="nav-link">Solutions</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#process" class="nav-link">Process</a></li>
+          <li><a href="#partners" class="nav-link">Partners</a></li>
+          <li><a href="#faq" class="nav-link">FAQs</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <a href="#contact" class="btn btn-primary nav-cta">APPLY FOR FINANCE</a>
+
+      <button class="mobile-toggle" id="mobileMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- MOBILE NAVIGATION DRAWER -->
+  <div class="mobile-nav" id="mobileNav" aria-hidden="true">
+    <a href="#home" class="nav-link mobile-link">Home</a>
+    <a href="#solutions" class="nav-link mobile-link">Solutions</a>
+    <a href="#about" class="nav-link mobile-link">About</a>
+    <a href="#process" class="nav-link mobile-link">Process</a>
+    <a href="#partners" class="nav-link mobile-link">Partners</a>
+    <a href="#faq" class="nav-link mobile-link">FAQs</a>
+    <a href="#contact" class="nav-link mobile-link">Contact</a>
+    <a href="#contact" class="btn btn-primary mobile-nav-cta mobile-link">APPLY FOR FINANCE</a>
+  </div>
+
+  <main>
+    <!-- ==========================================================================
+         HERO SECTION
+         ========================================================================== -->
+    <section class="hero-section" id="home">
+      <div class="container">
+        <div class="hero-grid">
+          
+          <div class="hero-content">
+            <span class="eyebrow">FINANCE & FUNDING SOLUTIONS</span>
+            <h1 class="hero-headline">
+              FUNDING<br>
+              STRUCTURED<br>
+              AROUND <span class="text-purple">YOUR REQUIREMENTS.</span>
+            </h1>
+            <p class="hero-desc">
+              FUNDMORE is the finance and funding division of AR Consultancy, providing structured financial assistance and lender coordination to individuals, entrepreneurs, businesses, manufacturers, builders, professionals, and project promoters.
+            </p>
+            
+            <div class="hero-actions">
+              <a href="#contact" class="btn btn-primary">APPLY FOR FINANCE</a>
+              <a href="#contact" class="btn btn-secondary">DISCUSS YOUR FUNDING REQUIREMENT</a>
+            </div>
+
+            <div class="hero-trust-list">
+              <span>Business Finance</span>
+              <span>Project Finance</span>
+              <span>MSME Funding</span>
+              <span>LAP</span>
+              <span>Machinery Finance</span>
+              <span>Home Loans</span>
+            </div>
+          </div>
+
+          <!-- Abstract Financial Composition -->
+          <div class="hero-visual-card" aria-hidden="true">
+            <div class="flow-connector-line"></div>
+            <div class="flow-diagram">
+              <div class="flow-step-node">
+                <div class="flow-icon-box">01</div>
+                <div class="flow-node-content">
+                  <div class="flow-node-title">Requirement</div>
+                  <div class="flow-node-sub">Consultative discussion & scoping</div>
+                </div>
+              </div>
+
+              <div class="flow-step-node">
+                <div class="flow-icon-box">02</div>
+                <div class="flow-node-content">
+                  <div class="flow-node-title">Assessment</div>
+                  <div class="flow-node-sub">Profile, financials & security review</div>
+                </div>
+              </div>
+
+              <div class="flow-step-node">
+                <div class="flow-icon-box">03</div>
+                <div class="flow-node-content">
+                  <div class="flow-node-title">Matching</div>
+                  <div class="flow-node-sub">Banking & NBFC policy identification</div>
+                </div>
+              </div>
+
+              <div class="flow-step-node">
+                <div class="flow-icon-box">04</div>
+                <div class="flow-node-content">
+                  <div class="flow-node-title">Application</div>
+                  <div class="flow-node-sub">End-to-end documentation & credit tracking</div>
+                </div>
+              </div>
+
+              <div class="flow-step-node">
+                <div class="flow-icon-box">05</div>
+                <div class="flow-node-content">
+                  <div class="flow-node-title">Funding</div>
+                  <div class="flow-node-sub">Sanction & disbursement facilitation</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="hero-micro-disclaimer">
+          <strong>Important Note:</strong> All funding facilities are subject to applicant eligibility, documentation, credit assessment, lender policies, applicable terms, and final approval by the respective Bank or NBFC.
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         INTRO SECTION (ABOUT FUNDMORE)
+         ========================================================================== -->
+    <section class="section-about" id="about">
+      <div class="container">
+        <div class="about-layout">
+          <div>
+            <span class="eyebrow">ABOUT FUNDMORE</span>
+            <h2 class="section-title">YOUR FINANCE & FUNDING SUPPORT PARTNER.</h2>
+            <p class="section-desc" style="margin-bottom: 1.5rem;">
+              FUNDMORE is the finance and funding division of AR Consultancy, focused on helping customers navigate the funding process with professional consultation, documentation support, lender coordination, and structured application assistance.
+            </p>
+            <p class="section-desc">
+              Our objective is to connect eligible applicants with potentially suitable Banking and NBFC funding solutions based on their requirements and financial profile.
+            </p>
+          </div>
+
+          <div class="editorial-pillars">
+            <div class="pillar-box">
+              <div class="pillar-word">UNDERSTAND.</div>
+              <p class="pillar-desc">Comprehensive preliminary assessment of business goals, capital structure, and timeline.</p>
+            </div>
+            <div class="pillar-box">
+              <div class="pillar-word">STRUCTURE.</div>
+              <p class="pillar-desc">Preparing viable documentation proposals aligning applicant capability with lender norms.</p>
+            </div>
+            <div class="pillar-box">
+              <div class="pillar-word">CONNECT.</div>
+              <p class="pillar-desc">Engaging with appropriate Banks, NBFCs, and financial distribution platforms.</p>
+            </div>
+            <div class="pillar-box">
+              <div class="pillar-word">COORDINATE.</div>
+              <p class="pillar-desc">Continuous follow-up during credit appraisal and verification till sanction.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         MARKETS SECTION
+         ========================================================================== */
+    <section class="section-markets">
+      <div class="container">
+        <div class="markets-wrapper">
+          <div>
+            <span class="eyebrow">GEOGRAPHIC FOOTPRINT</span>
+            <h2 class="section-title">FUNDING SUPPORT ACROSS KEY MARKETS.</h2>
+            <p class="section-desc">
+              FUNDMORE focuses its consultation and coordination services in four key economic hubs. Our ground understanding allows for tailored coordination with regional banking desks and credit officers.
+            </p>
+            
+            <div class="markets-list">
+              <div class="market-card">
+                <span class="market-badge">Key Hub</span>
+                <span class="market-name">GUJARAT</span>
+                <span class="market-focus">Surat, Ahmedabad, Vadodara, Rajkot & statewide</span>
+              </div>
+              <div class="market-card">
+                <span class="market-badge">Key Hub</span>
+                <span class="market-name">MADHYA PRADESH</span>
+                <span class="market-focus">Indore, Bhopal, Jabalpur & regional centers</span>
+              </div>
+              <div class="market-card">
+                <span class="market-badge">Key Hub</span>
+                <span class="market-name">MAHARASHTRA</span>
+                <span class="market-focus">Commercial, MSME & industrial hubs</span>
+              </div>
+              <div class="market-card">
+                <span class="market-badge">Key Hub</span>
+                <span class="market-name">RAJASTHAN</span>
+                <span class="market-focus">Key manufacturing, enterprise & trade zones</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Stylized Map Graphic Box -->
+          <div class="map-graphic-box">
+            <svg viewBox="0 0 400 320" width="100%" height="auto" role="img" aria-label="Map illustration showing Gujarat, Madhya Pradesh, Maharashtra, and Rajasthan">
+              <!-- Stylized Regional Nodes -->
+              <rect x="20" y="20" width="360" height="280" rx="12" fill="#F4F0FF" stroke="#5B21D0" stroke-width="1" stroke-dasharray="4 4" />
+              
+              <!-- Connection Lines -->
+              <line x1="120" y1="110" x2="220" y2="120" stroke="#5B21D0" stroke-width="2" />
+              <line x1="120" y1="110" x2="110" y2="190" stroke="#5B21D0" stroke-width="2" />
+              <line x1="110" y1="190" x2="220" y2="210" stroke="#5B21D0" stroke-width="2" />
+              <line x1="220" y1="120" x2="220" y2="210" stroke="#5B21D0" stroke-width="2" />
+              
+              <!-- State Nodes -->
+              <g transform="translate(120, 110)">
+                <circle r="22" fill="#5B21D0" />
+                <circle r="29" fill="none" stroke="#5B21D0" stroke-width="1.5" opacity="0.4" />
+                <text text-anchor="middle" dy="4" fill="#FFFFFF" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="11">RAJ</text>
+                <text text-anchor="middle" dy="42" fill="#111018" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="13">RAJASTHAN</text>
+              </g>
+
+              <g transform="translate(250, 120)">
+                <circle r="22" fill="#5B21D0" />
+                <circle r="29" fill="none" stroke="#5B21D0" stroke-width="1.5" opacity="0.4" />
+                <text text-anchor="middle" dy="4" fill="#FFFFFF" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="11">MP</text>
+                <text text-anchor="middle" dy="42" fill="#111018" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="13">MADHYA PRADESH</text>
+              </g>
+
+              <g transform="translate(90, 200)">
+                <circle r="24" fill="#6D35E8" />
+                <circle r="32" fill="none" stroke="#6D35E8" stroke-width="2" opacity="0.5" />
+                <text text-anchor="middle" dy="4" fill="#FFFFFF" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="11">GUJ</text>
+                <text text-anchor="middle" dy="44" fill="#111018" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="13">GUJARAT</text>
+              </g>
+
+              <g transform="translate(230, 220)">
+                <circle r="22" fill="#5B21D0" />
+                <circle r="29" fill="none" stroke="#5B21D0" stroke-width="1.5" opacity="0.4" />
+                <text text-anchor="middle" dy="4" fill="#FFFFFF" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="11">MAH</text>
+                <text text-anchor="middle" dy="42" fill="#111018" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="13">MAHARASHTRA</text>
+              </g>
+            </svg>
+            <p style="font-size: 0.8125rem; color: #6d6a7d; margin-top: 1rem; font-weight: 600;">
+              * Dedicated regional coverage across key business districts. Not claiming nationwide representation.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         FINANCE SOLUTIONS (INTERACTIVE DESKTOP & MOBILE ACCORDION)
+         ========================================================================== -->
+    <section class="section-solutions" id="solutions">
+      <div class="container">
+        <span class="eyebrow">PORTFOLIO OF SOLUTIONS</span>
+        <h2 class="section-title">
+          FUNDING SOLUTIONS FOR INDIVIDUALS,<br>
+          BUSINESSES & PROJECTS.
+        </h2>
+        <p class="section-desc">
+          We evaluate the unique attributes of your enterprise or project to identify suitable institutional financing pathways across Banks and NBFCs.
+        </p>
+
+        <!-- DESKTOP INTERACTIVE SYSTEM -->
+        <div class="solutions-system" aria-label="Solutions Navigation System">
+          <div class="solutions-nav" role="tablist">
+            <button class="service-nav-btn active" role="tab" aria-selected="true" data-index="0">01 Business Loans</button>
+            <button class="service-nav-btn" role="tab" aria-selected="false" data-index="1">02 Project Finance</button>
+            <button class="service-nav-btn" role="tab" aria-selected="false" data-index="2">03 MSME & CGTMSE Funding</button>
+            <button class="service-nav-btn" role="tab" aria-selected="false" data-index="3">04 Loan Against Property</button>
+            <button class="service-nav-btn" role="tab" aria-selected="false" data-index="4">05 Machinery & Equipment Finance</button>
+            <button class="service-nav-btn" role="tab" aria-selected="false" data-index="5">06 Working Capital Finance</button>
+            <button class="service-nav-btn" role="tab" aria-selected="false" data-index="6">07 Home Loans</button>
+            <button class="service-nav-btn" role="tab" aria-selected="false" data-index="7">08 Affordable Housing Finance</button>
+            <button class="service-nav-btn" role="tab" aria-selected="false" data-index="8">09 Secured & Unsecured Funding</button>
+            <button class="service-nav-btn" role="tab" aria-selected="false" data-index="9">10 Structured & Customized Finance</button>
+          </div>
+
+          <div class="service-display-panel" id="serviceDisplayPanel" role="tabpanel">
+            <span class="service-meta-tag" id="panelTag">SOLUTION 01</span>
+            <h3 class="service-panel-heading" id="panelHeading">Business Loans</h3>
+            <p class="service-panel-desc" id="panelDesc">
+              Funding options for eligible businesses requiring finance for business expansion, working capital, operational requirements, and growth initiatives.
+            </p>
+            <ul class="service-checklist" id="panelChecklist">
+              <li>Business expansion</li>
+              <li>Working capital</li>
+              <li>Operational requirements</li>
+              <li>Growth initiatives</li>
+              <li>Business development</li>
+            </ul>
+            <a href="#contact" class="btn btn-primary" style="width: fit-content;">DISCUSS THIS REQUIREMENT</a>
+          </div>
+        </div>
+
+        <!-- MOBILE ACCORDION (FALLBACK FOR SMALL VIEWPORTS) -->
+        <div class="solutions-accordion-mobile">
+          
+          <div class="acc-item">
+            <button class="acc-header active">01 — Business Loans <span>+</span></button>
+            <div class="acc-body open">
+              <p>Funding options for eligible businesses requiring finance for:</p>
+              <ul class="service-checklist" style="margin-top: 0.75rem;">
+                <li>Business expansion</li>
+                <li>Working capital</li>
+                <li>Operational requirements</li>
+                <li>Growth initiatives</li>
+                <li>Business development</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="acc-item">
+            <button class="acc-header">02 — Project Finance <span>+</span></button>
+            <div class="acc-body">
+              <p>Financial assistance for eligible new and existing projects, including:</p>
+              <ul class="service-checklist" style="margin-top: 0.75rem;">
+                <li>Manufacturing projects</li>
+                <li>Infrastructure projects</li>
+                <li>Commercial projects</li>
+                <li>Renewable energy projects</li>
+                <li>Expansion and modernization</li>
+                <li>Other eligible business projects</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="acc-item">
+            <button class="acc-header">03 — MSME & CGTMSE Funding <span>+</span></button>
+            <div class="acc-body">
+              <p>Assistance for eligible Micro, Small and Medium Enterprises exploring:</p>
+              <ul class="service-checklist" style="margin-top: 0.75rem;">
+                <li>MSME business loans</li>
+                <li>Applicable CGTMSE-backed financing</li>
+                <li>Working capital</li>
+                <li>Term loans</li>
+                <li>Business expansion finance</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="acc-item">
+            <button class="acc-header">04 — Loan Against Property <span>+</span></button>
+            <div class="acc-body">
+              <p>Property-backed funding solutions for eligible customers using acceptable residential, commercial, or other qualifying property as security, subject to lender policies.</p>
+              <ul class="service-checklist" style="margin-top: 0.75rem;">
+                <li>Business expansion</li>
+                <li>Working capital</li>
+                <li>Project requirements</li>
+                <li>Debt consolidation</li>
+                <li>Property development</li>
+                <li>Other eligible requirements</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="acc-item">
+            <button class="acc-header">05 — Machinery & Equipment Finance <span>+</span></button>
+            <div class="acc-body">
+              <p>Financing assistance for eligible businesses seeking to purchase:</p>
+              <ul class="service-checklist" style="margin-top: 0.75rem;">
+                <li>New machinery</li>
+                <li>Used machinery</li>
+                <li>Industrial equipment</li>
+                <li>Business assets</li>
+                <li>Plant and equipment</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="acc-item">
+            <button class="acc-header">06 — Working Capital Finance <span>+</span></button>
+            <div class="acc-body">
+              <p>Funding solutions designed to support:</p>
+              <ul class="service-checklist" style="margin-top: 0.75rem;">
+                <li>Day-to-day operations</li>
+                <li>Inventory requirements</li>
+                <li>Cash-flow requirements</li>
+                <li>Business expansion</li>
+                <li>Operational working capital</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="acc-item">
+            <button class="acc-header">07 — Home Loans <span>+</span></button>
+            <div class="acc-body">
+              <p>Home financing solutions for eligible:</p>
+              <ul class="service-checklist" style="margin-top: 0.75rem;">
+                <li>Salaried individuals</li>
+                <li>Self-employed professionals</li>
+                <li>Business owners</li>
+                <li>Other eligible applicants</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="acc-item">
+            <button class="acc-header">08 — Affordable Housing Finance <span>+</span></button>
+            <div class="acc-body">
+              <p>Financing options for eligible customers looking to:</p>
+              <ul class="service-checklist" style="margin-top: 0.75rem;">
+                <li>Purchase a home</li>
+                <li>Construct a home</li>
+                <li>Improve or extend residential property</li>
+                <li>Explore affordable housing finance</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="acc-item">
+            <button class="acc-header">09 — Secured & Unsecured Funding <span>+</span></button>
+            <div class="acc-body">
+              <p>FUNDMORE assists eligible applicants in exploring both secured and unsecured financing options through suitable financial institutions based on risk profiling and eligibility.</p>
+            </div>
+          </div>
+
+          <div class="acc-item">
+            <button class="acc-header">10 — Structured & Customized Finance <span>+</span></button>
+            <div class="acc-body">
+              <p>For larger or specialized requirements, FUNDMORE assists in coordinating customized funding proposals based on project structure, business profile, cash flow, financial requirements, security availability, and lender requirements.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+       BUSINESS & PROJECT FINANCE (DEEP PURPLE SECTION)
+       ========================================================================== -->
+    <section class="section-dark-finance">
+      <div class="container">
+        <div class="dark-grid-layout">
+          <div>
+            <span class="eyebrow light">INSTITUTIONAL STRUCTURING</span>
+            <div class="dark-tagline">
+              BUSINESS GROWTH<br>
+              NEEDS <span>STRUCTURED</span><br>
+              FINANCE.
+            </div>
+          </div>
+
+          <div>
+            <div class="sub-section-title">Business Finance Solutions</div>
+            <div class="items-tag-cloud" style="margin-bottom: 2.5rem;">
+              <span class="item-tag">Business Expansion Finance</span>
+              <span class="item-tag">Working Capital Finance</span>
+              <span class="item-tag">Term Loans</span>
+              <span class="item-tag">Machinery & Equipment Finance</span>
+              <span class="item-tag">MSME Funding</span>
+              <span class="item-tag">Secured & Unsecured Business Loans</span>
+              <span class="item-tag">Loan Against Property</span>
+              <span class="item-tag">Business Takeover / Balance Transfer</span>
+              <span class="item-tag">Debt Restructuring & Refinancing</span>
+            </div>
+
+            <div class="sub-section-title">Project Finance Assistance</div>
+            <div class="items-tag-cloud">
+              <span class="item-tag">New Project Setup</span>
+              <span class="item-tag">Manufacturing Projects</span>
+              <span class="item-tag">Commercial Projects</span>
+              <span class="item-tag">Infrastructure Projects</span>
+              <span class="item-tag">Renewable Energy Projects</span>
+              <span class="item-tag">Expansion & Modernization</span>
+              <span class="item-tag">Plant & Machinery</span>
+              <span class="item-tag">Project-Based Working Capital</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+       PROJECT ASSESSMENT SECTION (EDITORIAL DIAGRAM)
+       ========================================================================== -->
+    <section class="section-assessment">
+      <div class="container">
+        <span class="eyebrow">CREDIT & VIABILITY PARAMETERS</span>
+        <h2 class="section-title">UNDERSTANDING THE FUNDING REQUIREMENT.</h2>
+        <p class="section-desc">
+          Institutional lenders analyze multiple dimensions before establishing credit eligibility. FUNDMORE assists in structuring documents around these critical assessment points.
+        </p>
+
+        <div class="nodes-grid">
+          <div class="assessment-node">
+            <div class="node-num">PARAMETER 01</div>
+            <div class="node-title">PROJECT PROFILE</div>
+          </div>
+          <div class="assessment-node">
+            <div class="node-num">PARAMETER 02</div>
+            <div class="node-title">PROMOTER BACKGROUND</div>
+          </div>
+          <div class="assessment-node">
+            <div class="node-num">PARAMETER 03</div>
+            <div class="node-title">FINANCIAL STATEMENTS</div>
+          </div>
+          <div class="assessment-node">
+            <div class="node-num">PARAMETER 04</div>
+            <div class="node-title">PROJECTED CASH FLOWS</div>
+          </div>
+          <div class="assessment-node">
+            <div class="node-num">PARAMETER 05</div>
+            <div class="node-title">EXISTING LIABILITIES</div>
+          </div>
+          <div class="assessment-node">
+            <div class="node-num">PARAMETER 06</div>
+            <div class="node-title">SECURITY AVAILABILITY</div>
+          </div>
+          <div class="assessment-node">
+            <div class="node-num">PARAMETER 07</div>
+            <div class="node-title">PROJECT VIABILITY</div>
+          </div>
+          <div class="assessment-node">
+            <div class="node-num">PARAMETER 08</div>
+            <div class="node-title">OTHER FINANCIAL INFORMATION</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+       FUNDING PROCESS
+       ========================================================================== -->
+    <section class="section-process" id="process">
+      <div class="container">
+        <span class="eyebrow">STRUCTURED EXECUTION</span>
+        <h2 class="section-title">A SIMPLE & STRUCTURED FUNDING PROCESS.</h2>
+        <p class="section-desc">
+          Our phased execution model eliminates ambiguity, ensuring your file moves systematically from initial scoping to lender credit appraisal.
+        </p>
+
+        <div class="process-timeline">
+          <div class="process-step">
+            <div class="process-step-indicator">01</div>
+            <h3 class="process-step-title">REQUIREMENT DISCUSSION</h3>
+          </div>
+          <div class="process-step">
+            <div class="process-step-indicator">02</div>
+            <h3 class="process-step-title">PROFILE ASSESSMENT</h3>
+          </div>
+          <div class="process-step">
+            <div class="process-step-indicator">03</div>
+            <h3 class="process-step-title">DOCUMENTATION</h3>
+          </div>
+          <div class="process-step">
+            <div class="process-step-indicator">04</div>
+            <h3 class="process-step-title">LENDER IDENTIFICATION</h3>
+          </div>
+          <div class="process-step">
+            <div class="process-step-indicator">05</div>
+            <h3 class="process-step-title">APPLICATION & CREDIT PROCESS</h3>
+          </div>
+          <div class="process-step">
+            <div class="process-step-indicator">06</div>
+            <h3 class="process-step-title">SANCTION & DISBURSEMENT</h3>
+          </div>
+        </div>
+
+        <div class="process-subline">
+          <span>DISCUSS</span>
+          <span>ASSESS</span>
+          <span>DOCUMENT</span>
+          <span>MATCH</span>
+          <span>APPLY</span>
+          <span>CREDIT</span>
+          <span>SANCTION</span>
+          <span>DISBURSEMENT</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+       WHY FUNDMORE
+       ========================================================================== -->
+    <section class="section-why">
+      <div class="container">
+        <span class="eyebrow">DISTINCTIVE VALUE</span>
+        <h2 class="section-title">WHY FUNDMORE?</h2>
+        <p class="section-desc">
+          We combine financial advisory rigor with wide institutional reach to support your funding journey.
+        </p>
+
+        <div class="why-grid">
+          <div class="why-block">
+            <div class="why-num">01</div>
+            <h3 class="why-title">MULTIPLE FUNDING OPTIONS</h3>
+            <p class="why-text">
+              Explore financing possibilities through a dedicated network comprising Banks, NBFCs, and established Financial Distribution Partners.
+            </p>
+          </div>
+
+          <div class="why-block">
+            <div class="why-num">02</div>
+            <h3 class="why-title">MULTI-STATE PRESENCE</h3>
+            <p class="why-text">
+              Active operational coordination across Gujarat, Madhya Pradesh, Maharashtra, and Rajasthan.
+            </p>
+          </div>
+
+          <div class="why-block">
+            <div class="why-num">03</div>
+            <h3 class="why-title">REQUIREMENT-BASED APPROACH</h3>
+            <p class="why-text">
+              We first understand the customer's funding requirement and financial profile before exploring potentially suitable financing options.
+            </p>
+          </div>
+
+          <div class="why-block">
+            <div class="why-num">04</div>
+            <h3 class="why-title">END-TO-END COORDINATION</h3>
+            <p class="why-text">
+              Preliminary assessment, documentation support, lender identification, application coordination, credit-process coordination, and active follow-up.
+            </p>
+          </div>
+        </div>
+
+        <div class="transparent-comm-banner">
+          <div class="comm-title">PROFESSIONAL & TRANSPARENT COMMUNICATION ACROSS:</div>
+          <div class="comm-tags">
+            <span class="comm-tag">Documentation</span>
+            <span class="comm-tag">Eligibility</span>
+            <span class="comm-tag">Lender Requirements</span>
+            <span class="comm-tag">Application Procedures</span>
+            <span class="comm-tag">Credit Assessment</span>
+            <span class="comm-tag">Applicable Terms</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+       PARTNER NETWORK
+       ========================================================================== -->
+    <section class="section-partners" id="partners">
+      <div class="container">
+        <span class="eyebrow">INSTITUTIONAL ECOSYSTEM</span>
+        <h2 class="section-title">A NETWORK OF FINANCIAL PARTNERS.</h2>
+        
+        <div class="partners-grid">
+          <div class="partner-card">
+            <span class="partner-name">Andromeda</span>
+          </div>
+          <div class="partner-card">
+            <span class="partner-name">Urban Money</span>
+          </div>
+          <div class="partner-card">
+            <span class="partner-name">Ruloans</span>
+          </div>
+          <div class="partner-card">
+            <span class="partner-name">Other Banking & NBFC Partners</span>
+          </div>
+        </div>
+
+        <p class="partner-note">
+          Our network enables us to explore multiple financing possibilities based on the customer's requirement, eligibility, financial profile, and applicable lender criteria. We do not claim exclusive partnerships.
+        </p>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+       MANAGEMENT TEAM
+       ========================================================================== -->
+    <section class="section-team">
+      <div class="container">
+        <span class="eyebrow">CONSULTING LEADERSHIP</span>
+        <h2 class="section-title">
+          EXPERIENCED PROFESSIONALS<br>
+          SUPPORTING YOUR FUNDING JOURNEY.
+        </h2>
+
+        <div class="team-grid">
+          <!-- Member 1 -->
+          <div class="team-card">
+            <div class="team-header-row">
+              <div class="team-initials">AB</div>
+              <div>
+                <h3 class="team-name">Mr. Ankit Bhandari</h3>
+                <span class="team-role">Financial Consultant</span>
+              </div>
+            </div>
+            <p class="team-detail">
+              Brings 15 years of professional experience in funding solutions and taxation advisory, assisting commercial entities in structuring proposals aligned with regulatory and lender norms.
+            </p>
+            <div class="team-zone-badge">
+              Primary Zone: Surat & South Gujarat
+            </div>
+          </div>
+
+          <!-- Member 2 -->
+          <div class="team-card">
+            <div class="team-header-row">
+              <div class="team-initials">AV</div>
+              <div>
+                <h3 class="team-name">Dr. Aryankumar Verma (Ph.D)</h3>
+                <span class="team-role">Business Consultant</span>
+              </div>
+            </div>
+            <p class="team-detail">
+              15 years of professional experience in business consulting and funding-related support, guiding enterprises on project viability, capital requirements, and institutional credit coordination.
+            </p>
+            <div class="team-zone-badge">
+              Coverage: Surat and Madhya Pradesh
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+       ELIGIBILITY & DOCUMENTATION
+       ========================================================================== -->
+    <section class="section-eligibility">
+      <div class="container">
+        <span class="eyebrow">CRITERIA & VERIFICATION</span>
+        <h2 class="section-title">UNDERSTANDING YOUR FUNDING ELIGIBILITY.</h2>
+        <p class="section-desc">
+          Eligibility varies according to the loan product, lender, applicant profile, financial position, security availability, and funding requirement.
+        </p>
+
+        <div class="eligibility-grid">
+          <!-- Factors -->
+          <div class="checklist-card">
+            <h3 class="checklist-title">FACTORS LENDERS MAY CONSIDER</h3>
+            <ul class="two-col-list">
+              <li>Applicant / Promoter Profile</li>
+              <li>Business Vintage</li>
+              <li>Annual Turnover</li>
+              <li>Profitability and Cash Flow</li>
+              <li>Banking Transactions</li>
+              <li>Credit History / CIBIL Profile</li>
+              <li>Existing Loans & Liabilities</li>
+              <li>Business Registration & Legal Structure</li>
+              <li>Property or Security</li>
+              <li>Project Viability</li>
+              <li>Financial Projections</li>
+            </ul>
+          </div>
+
+          <!-- Documents Required -->
+          <div class="checklist-card">
+            <h3 class="checklist-title">COMMON DOCUMENTS REQUIRED</h3>
+            <ul class="two-col-list">
+              <li>PAN Card</li>
+              <li>Aadhaar Card / Address Proof</li>
+              <li>Photograph</li>
+              <li>Bank Statements</li>
+              <li>Certificate of Incorporation / Registration</li>
+              <li>Partnership Deed / LLP Agreement</li>
+              <li>GST Registration & Returns</li>
+              <li>Udyam / MSME Registration</li>
+              <li>Business Address Proof</li>
+              <li>Business Bank Statements</li>
+              <li>Income Tax Returns</li>
+              <li>Balance Sheet</li>
+              <li>Profit & Loss Statements</li>
+              <li>Financial Statements</li>
+              <li>Existing Loan Statements</li>
+              <li>Property Documents</li>
+              <li>Project Report & Cost Estimates</li>
+              <li>Business Plan & CMA Statements</li>
+              <li>Machinery Quotations</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+       PRODUCT SPOTLIGHT: LOAN AGAINST PROPERTY (LAP)
+       ========================================================================== -->
+    <section class="section-spotlight">
+      <div class="container">
+        <div class="spotlight-grid">
+          <div>
+            <span class="eyebrow">PROPERTY ASSET MONETIZATION</span>
+            <h2 class="section-title">
+              UNLOCK THE FUNDING POTENTIAL<br>
+              OF YOUR PROPERTY.
+            </h2>
+            <p class="section-desc" style="margin-bottom: 1.5rem;">
+              Property-backed funding solutions for eligible customers utilizing acceptable residential, commercial, or industrial real estate as security, subject to lender criteria.
+            </p>
+            <p style="font-size: 0.875rem; color: #646173; font-style: italic;">
+              * Note: The final loan amount, interest rate, tenure, security requirements, and approval are determined by the respective lender.
+            </p>
+          </div>
+
+          <div class="spotlight-card">
+            <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem; text-transform: uppercase;">Potential LAP Requirements:</h3>
+            <div class="spotlight-pills">
+              <span class="spotlight-pill">Business Expansion</span>
+              <span class="spotlight-pill">Working Capital</span>
+              <span class="spotlight-pill">Project Requirements</span>
+              <span class="spotlight-pill">Debt Consolidation</span>
+              <span class="spotlight-pill">Property Development</span>
+              <span class="spotlight-pill">Other Eligible Requirements</span>
+            </div>
+            
+            <div style="margin-top: 1.5rem; border-top: 1px solid var(--border-light); padding-top: 1rem;">
+              <span style="font-size: 0.8rem; font-weight: 700; color: #726e82; text-transform: uppercase;">LAP Coordination Process:</span>
+              <div class="process-mini-flow">
+                <span>Assessment</span>
+                <span>Proposal Prep</span>
+                <span>Documentation</span>
+                <span>Lender Coordination</span>
+                <span>Processing</span>
+                <span>Credit Review</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+       PRODUCT SPOTLIGHT: MACHINERY & EQUIPMENT FINANCE
+       ========================================================================== -->
+    <section class="section-spotlight" style="background-color: var(--soft-gray);">
+      <div class="container">
+        <div class="spotlight-grid">
+          <div class="spotlight-card" style="background: var(--white);">
+            <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem; text-transform: uppercase;">Suitable Industry Segments:</h3>
+            <div class="spotlight-pills">
+              <span class="spotlight-pill">Manufacturing Units</span>
+              <span class="spotlight-pill">Industrial Businesses</span>
+              <span class="spotlight-pill">Construction Companies</span>
+              <span class="spotlight-pill">Engineering Units</span>
+              <span class="spotlight-pill">Processing Industries</span>
+              <span class="spotlight-pill">MSMEs</span>
+              <span class="spotlight-pill">Modernization Projects</span>
+            </div>
+
+            <div style="margin-top: 1.5rem; border-top: 1px solid var(--border-light); padding-top: 1rem;">
+              <span style="font-size: 0.8rem; font-weight: 700; color: #726e82; text-transform: uppercase;">Coordination Stages:</span>
+              <div class="process-mini-flow">
+                <span>Assessment</span>
+                <span>Documentation</span>
+                <span>Machinery Details</span>
+                <span>Lender Submission</span>
+                <span>Credit Assessment</span>
+                <span>Sanction</span>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <span class="eyebrow">CAPITAL EXPENDITURE</span>
+            <h2 class="section-title">
+              FINANCE FOR MACHINERY &<br>
+              BUSINESS EQUIPMENT.
+            </h2>
+            <p class="section-desc">
+              Financing assistance for eligible businesses seeking to purchase new or used machinery, industrial equipment, and core operating plant assets to scale output.
+            </p>
+            <a href="#contact" class="btn btn-primary">EXPLORE MACHINERY FINANCE</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+       PRODUCT SPOTLIGHT: HOME FINANCE
+       ========================================================================== -->
+    <section class="section-spotlight">
+      <div class="container">
+        <div class="spotlight-grid">
+          <div>
+            <span class="eyebrow">RESIDENTIAL SOLUTIONS</span>
+            <h2 class="section-title">
+              HOME FINANCE, STRUCTURED<br>
+              AROUND YOUR REQUIREMENT.
+            </h2>
+            <p class="section-desc">
+              Structured home financing solutions coordinated for salaried professionals, self-employed individuals, and business owners looking to purchase, construct, or improve residential property.
+            </p>
+            <a href="#contact" class="btn btn-secondary">DISCUSS HOME FINANCE</a>
+          </div>
+
+          <div class="spotlight-card">
+            <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem; text-transform: uppercase;">Funding Facilities:</h3>
+            <div class="spotlight-pills">
+              <span class="spotlight-pill">Home Purchase Finance</span>
+              <span class="spotlight-pill">Home Construction Finance</span>
+              <span class="spotlight-pill">Home Improvement / Extension</span>
+              <span class="spotlight-pill">Affordable Housing Finance</span>
+              <span class="spotlight-pill">Balance Transfer</span>
+              <span class="spotlight-pill">Top-Up Loan</span>
+            </div>
+
+            <div style="margin-top: 1.5rem; border-top: 1px solid var(--border-light); padding-top: 1rem;">
+              <span style="font-size: 0.8rem; font-weight: 700; color: #726e82; text-transform: uppercase;">Target Applicant Profiles:</span>
+              <p style="font-size: 0.9rem; color: #555263; margin-top: 0.5rem; font-weight: 600;">
+                Salaried Individuals • Self-Employed Professionals • Business Owners • Other Eligible Applicants
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+       FAQ SECTION
+       ========================================================================== -->
+    <section class="section-faq" id="faq">
+      <div class="container">
+        <div style="text-align: center; max-width: 750px; margin: 0 auto 3.5rem;">
+          <span class="eyebrow">CLARITY & TRANSPARENCY</span>
+          <h2 class="section-title">FREQUENTLY ASKED QUESTIONS</h2>
+          <p class="section-desc" style="margin: 0 auto;">
+            Find clear answers regarding FUNDMORE's role, services, and lender coordination procedures.
+          </p>
+        </div>
+
+        <div class="faq-list">
+          
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span>What type of loans does FUNDMORE assist with?</span>
+              <span class="faq-chevron" aria-hidden="true"></span>
+            </button>
+            <div class="faq-content">
+              FUNDMORE assists with Business Loans, Project Finance, MSME & CGTMSE Funding, Loan Against Property (LAP), Machinery & Equipment Finance, Working Capital Finance, Home Loans, Affordable Housing Finance, Secured & Unsecured Funding, and Structured Finance proposals.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span>Do you provide CGTMSE loans?</span>
+              <span class="faq-chevron" aria-hidden="true"></span>
+            </button>
+            <div class="faq-content">
+              FUNDMORE assists eligible MSME applicants in exploring financing under applicable CGTMSE-backed credit schemes through Banks and NBFCs, subject to scheme guidelines and lender approval.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span>Can a new business apply for finance?</span>
+              <span class="faq-chevron" aria-hidden="true"></span>
+            </button>
+            <div class="faq-content">
+              Yes, new businesses and project promoters can explore funding options such as project finance, secured loans, or applicable government-backed schemes, depending on profile, project viability, promoter background, and lender credit policies.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span>Can I apply if I already have an existing loan?</span>
+              <span class="faq-chevron" aria-hidden="true"></span>
+            </button>
+            <div class="faq-content">
+              Yes, applicants with existing loans can explore additional financing, balance transfer, top-up facilities, or refinancing options, subject to repayment track record, income, cash flows, and lender evaluation.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span>What documents do I need?</span>
+              <span class="faq-chevron" aria-hidden="true"></span>
+            </button>
+            <div class="faq-content">
+              Documentation depends on the loan category and applicant profile. Commonly required documents include KYC (PAN, Aadhaar/address proof), banking statements, business registrations (GST, Udyam), income tax returns, financial statements, and collateral or project reports where applicable.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span>How long does the loan process take?</span>
+              <span class="faq-chevron" aria-hidden="true"></span>
+            </button>
+            <div class="faq-content">
+              The processing time depends on the loan category, completeness of documentation, lender evaluation process, property verification, and credit assessment. FUNDMORE assists in organizing documents and coordinating follow-ups to keep the process structured.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span>Is loan approval guaranteed?</span>
+              <span class="faq-chevron" aria-hidden="true"></span>
+            </button>
+            <div class="faq-content">
+              No. FUNDMORE does not guarantee loan approval. Final decisions on loan sanction, sanctioned amount, rate of interest, tenure, security requirement, and disbursement are solely at the discretion of the respective Bank or NBFC based on credit policies.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span>Does FUNDMORE provide loans directly?</span>
+              <span class="faq-chevron" aria-hidden="true"></span>
+            </button>
+            <div class="faq-content">
+              No. FUNDMORE is a funding and financial consultancy division of AR Consultancy. We provide consultation, documentation assistance, proposal structuring, and lender coordination. All funding facilities are sanctioned and disbursed directly by partner Banks and NBFCs.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+       IMPORTANT DISCLAIMER SECTION
+       ========================================================================== -->
+    <section class="section-disclaimer">
+      <div class="container">
+        <div class="disclaimer-card">
+          <h3>IMPORTANT FUNDING INFORMATION</h3>
+          <p>
+            FUNDMORE does not guarantee loan approval. Final decisions relating to loan sanction, interest rate, loan amount, tenure, security requirements, processing, and disbursement are determined by the respective lender based on its internal credit policies and assessment.
+          </p>
+          <p>
+            All financing facilities are subject to applicant eligibility, documentation, credit assessment, applicable lender policies, terms and conditions, and final approval by the respective Bank or NBFC.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+       FINAL CTA
+       ========================================================================== -->
+    <section class="section-final-cta" id="contact">
+      <div class="container cta-container">
+        <span class="eyebrow light">GET IN TOUCH</span>
+        <h2 class="final-headline">
+          LET'S DISCUSS YOUR<br>
+          FUNDING REQUIREMENT.
+        </h2>
+        <p class="final-desc">
+          Looking for funding for your business, project, property, machinery, working capital, or home? Connect with FUNDMORE to discuss your requirement and explore available financing options through our network of financial institutions.
+        </p>
+
+        <div class="cta-buttons-wrap">
+          <a href="tel:+919106530248" class="btn btn-white">APPLY FOR FINANCE</a>
+          <a href="mailto:fundmoresurat@gmail.com" class="btn btn-secondary-white">DISCUSS YOUR REQUIREMENT</a>
+        </div>
+
+        <div class="cta-contact-strip">
+          <a href="tel:+919106530248">
+            <span>Phone:</span>
+            <span>+91 91065 30248</span>
+          </a>
+          <span style="opacity: 0.4;">|</span>
+          <a href="mailto:fundmoresurat@gmail.com">
+            <span>Email:</span>
+            <span>fundmoresurat@gmail.com</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        
+        <div>
+          <div class="footer-brand-title">FUNDMORE</div>
+          <div class="footer-tagline">Finance & Funding Solutions</div>
+          <div class="footer-subbrand">A Division of AR Consultancy</div>
+          <p style="font-size: 0.85rem; line-height: 1.6; color: #878496;">
+            Providing professional consultation, financial document structuring, and Banking / NBFC coordination to help individuals, enterprises, and promoters navigate funding.
+          </p>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Solutions</div>
+          <ul class="footer-links">
+            <li><a href="#solutions">Business Finance</a></li>
+            <li><a href="#solutions">Project Finance</a></li>
+            <li><a href="#solutions">MSME & CGTMSE Funding</a></li>
+            <li><a href="#solutions">Loan Against Property (LAP)</a></li>
+            <li><a href="#solutions">Machinery Finance</a></li>
+            <li><a href="#solutions">Working Capital Finance</a></li>
+            <li><a href="#solutions">Home Loans</a></li>
+            <li><a href="#solutions">Affordable Housing Finance</a></li>
+            <li><a href="#solutions">Structured Finance</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Operating Markets</div>
+          <ul class="footer-links">
+            <li><a href="#about">Gujarat</a></li>
+            <li><a href="#about">Madhya Pradesh</a></li>
+            <li><a href="#about">Maharashtra</a></li>
+            <li><a href="#about">Rajasthan</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Direct Contact</div>
+          <ul class="footer-links">
+            <li>
+              <strong>Phone:</strong><br>
+              <a href="tel:+919106530248">+91 91065 30248</a>
+            </li>
+            <li style="margin-top: 0.5rem;">
+              <strong>Email:</strong><br>
+              <a href="mailto:fundmoresurat@gmail.com">fundmoresurat@gmail.com</a>
+            </li>
+            <li style="margin-top: 0.75rem; font-size: 0.8rem; line-height: 1.5; color: #737082;">
+              Assistance subject to eligibility, documentation, and lender terms.
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © FUNDMORE | A Division of AR Consultancy. All Rights Reserved.
+        </div>
+        <div style="font-size: 0.75rem;">
+          Consulting & Institutional Facilitation Partner
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       VANILLA JAVASCRIPT
+       ========================================================================== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Sticky Header Compactness on Scroll
+      const header = document.getElementById('site-header');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 40) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      }, { passive: true });
+
+      // 2. Mobile Menu Drawer Toggle
+      const mobileBtn = document.getElementById('mobileMenuBtn');
+      const mobileNav = document.getElementById('mobileNav');
+      const mobileLinks = document.querySelectorAll('.mobile-link');
+
+      function toggleMenu() {
+        const isOpen = mobileNav.classList.toggle('open');
+        mobileBtn.classList.toggle('active', isOpen);
+        mobileBtn.setAttribute('aria-expanded', isOpen);
+        mobileNav.setAttribute('aria-hidden', !isOpen);
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+      }
+
+      mobileBtn.addEventListener('click', toggleMenu);
+
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          if (mobileNav.classList.contains('open')) {
+            toggleMenu();
+          }
+        });
+      });
+
+      // 3. Interactive Solutions Desktop System
+      const servicesData = [
+        {
+          tag: "SOLUTION 01",
+          title: "Business Loans",
+          desc: "Funding options for eligible businesses requiring finance for business expansion, working capital, operational requirements, and growth initiatives.",
+          items: [
+            "Business expansion",
+            "Working capital",
+            "Operational requirements",
+            "Growth initiatives",
+            "Business development"
+          ]
+        },
+        {
+          tag: "SOLUTION 02",
+          title: "Project Finance",
+          desc: "Financial assistance for eligible new and existing projects across commercial and industrial infrastructure.",
+          items: [
+            "Manufacturing projects",
+            "Infrastructure projects",
+            "Commercial projects",
+            "Renewable energy projects",
+            "Expansion and modernization",
+            "Other eligible business projects"
+          ]
+        },
+        {
+          tag: "SOLUTION 03",
+          title: "MSME & CGTMSE Funding",
+          desc: "Assistance for eligible Micro, Small and Medium Enterprises exploring targeted institutional financing.",
+          items: [
+            "MSME business loans",
+            "Applicable CGTMSE-backed financing",
+            "Working capital facilities",
+            "Term loans",
+            "Business expansion finance"
+          ]
+        },
+        {
+          tag: "SOLUTION 04",
+          title: "Loan Against Property",
+          desc: "Property-backed funding solutions for eligible customers using acceptable residential, commercial, or qualifying property as security, subject to lender policies.",
+          items: [
+            "Business expansion",
+            "Working capital",
+            "Project requirements",
+            "Debt consolidation",
+            "Property development",
+            "Other eligible requirements"
+          ]
+        },
+        {
+          tag: "SOLUTION 05",
+          title: "Machinery & Equipment Finance",
+          desc: "Financing assistance for eligible businesses seeking to purchase industrial machinery and core operating assets.",
+          items: [
+            "New machinery",
+            "Used machinery",
+            "Industrial equipment",
+            "Business assets",
+            "Plant and equipment"
+          ]
+        },
+        {
+          tag: "SOLUTION 06",
+          title: "Working Capital Finance",
+          desc: "Funding solutions structured to support regular liquidity cycles and uninterrupted business operations.",
+          items: [
+            "Day-to-day operations",
+            "Inventory requirements",
+            "Cash-flow requirements",
+            "Business expansion",
+            "Operational working capital"
+          ]
+        },
+        {
+          tag: "SOLUTION 07",
+          title: "Home Loans",
+          desc: "Home financing solutions tailored to applicant profile, income flows, and property specifications.",
+          items: [
+            "Salaried individuals",
+            "Self-employed professionals",
+            "Business owners",
+            "Other eligible applicants"
+          ]
+        },
+        {
+          tag: "SOLUTION 08",
+          title: "Affordable Housing Finance",
+          desc: "Financing options for eligible customers exploring primary housing acquisitions and extensions.",
+          items: [
+            "Purchase a home",
+            "Construct a home",
+            "Improve or extend residential property",
+            "Explore affordable housing finance"
+          ]
+        },
+        {
+          tag: "SOLUTION 09",
+          title: "Secured & Unsecured Funding",
+          desc: "FUNDMORE assists eligible applicants in exploring both secured and unsecured financing options through suitable financial institutions.",
+          items: [
+            "Secured credit facilities",
+            "Unsecured business term loans",
+            "Collateral evaluation support",
+            "Custom risk alignment"
+          ]
+        },
+        {
+          tag: "SOLUTION 10",
+          title: "Structured & Customized Finance",
+          desc: "For larger or specialized requirements, FUNDMORE assists in coordinating customized funding proposals based on unique cash flows and project characteristics.",
+          items: [
+            "Project structure analysis",
+            "Business profile alignment",
+            "Cash flow assessment",
+            "Financial requirements review",
+            "Security availability structuring",
+            "Lender requirements compliance"
+          ]
+        }
+      ];
+
+      const navButtons = document.querySelectorAll('.service-nav-btn');
+      const panelTag = document.getElementById('panelTag');
+      const panelHeading = document.getElementById('panelHeading');
+      const panelDesc = document.getElementById('panelDesc');
+      const panelChecklist = document.getElementById('panelChecklist');
+
+      navButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          navButtons.forEach(b => {
+            b.classList.remove('active');
+            b.setAttribute('aria-selected', 'false');
+          });
+          btn.classList.add('active');
+          btn.setAttribute('aria-selected', 'true');
+
+          const index = parseInt(btn.getAttribute('data-index'), 10);
+          const data = servicesData[index];
+
+          if (data) {
+            panelTag.textContent = data.tag;
+            panelHeading.textContent = data.title;
+            panelDesc.textContent = data.desc;
+            
+            // Build checklist
+            panelChecklist.innerHTML = '';
+            data.items.forEach(item => {
+              const li = document.createElement('li');
+              li.textContent = item;
+              panelChecklist.appendChild(li);
+            });
+          }
+        });
+      });
+
+      // 4. Mobile Solutions Accordions
+      const accHeaders = document.querySelectorAll('.acc-header');
+      accHeaders.forEach(hdr => {
+        hdr.addEventListener('click', () => {
+          const body = hdr.nextElementSibling;
+          const isOpen = body.classList.contains('open');
+
+          accHeaders.forEach(h => {
+            h.classList.remove('active');
+            h.querySelector('span').textContent = '+';
+            if (h.nextElementSibling) {
+              h.nextElementSibling.classList.remove('open');
+            }
+          });
+
+          if (!isOpen) {
+            hdr.classList.add('active');
+            body.classList.add('open');
+            hdr.querySelector('span').textContent = '−';
+          }
+        });
+      });
+
+      // 5. FAQ Accordions
+      const faqTriggers = document.querySelectorAll('.faq-trigger');
+      faqTriggers.forEach(trigger => {
+        trigger.addEventListener('click', () => {
+          const content = trigger.nextElementSibling;
+          const isExpanded = trigger.classList.contains('active');
+
+          faqTriggers.forEach(t => {
+            t.classList.remove('active');
+            t.setAttribute('aria-expanded', 'false');
+            if (t.nextElementSibling) {
+              t.nextElementSibling.classList.remove('open');
+            }
+          });
+
+          if (!isExpanded) {
+            trigger.classList.add('active');
+            trigger.setAttribute('aria-expanded', 'true');
+            content.classList.add('open');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
