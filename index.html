@@ -406,40 +406,34 @@
     }
 
     /* ==========================================================================
-       HERO SECTION (UPDATED BACKGROUND WITH SUBTLE GRADIENT)
+       HERO SECTION (LESSER GRADIENT, IMAGE ONLY HERE)
        ========================================================================== */
     .hero-section {
       background-color: var(--white);
       background-image: 
-        linear-gradient(rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.98)),
+        linear-gradient(rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.85)),
         url('images/file_00000000993482078100c54f52b8c023.png');
       background-position: center center;
       background-size: cover;
       background-repeat: no-repeat;
-      padding: clamp(3rem, 6vw, 6rem) 0 clamp(2.5rem, 5vw, 4.5rem);
+      padding: clamp(4rem, 8vw, 7.5rem) 0 clamp(3.5rem, 6vw, 5.5rem);
       position: relative;
       border-bottom: 1px solid var(--border-light);
       overflow: hidden;
     }
 
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: clamp(2rem, 5vw, 4rem);
-      align-items: center;
-    }
-
-    .hero-content {
-      max-width: 650px;
+    .hero-container {
+      max-width: 1050px;
+      margin: 0 auto;
     }
 
     .hero-headline {
-      font-size: clamp(2.35rem, 5.2vw, 4.25rem);
+      font-size: clamp(2.5rem, 6vw, 4.75rem);
       font-weight: 800;
       line-height: 1.05;
       text-transform: uppercase;
       letter-spacing: -0.03em;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.75rem;
       color: var(--near-black);
     }
 
@@ -450,28 +444,30 @@
     }
 
     .hero-desc {
-      font-size: clamp(1rem, 1.2vw, 1.15rem);
+      font-size: clamp(1.1rem, 1.35vw, 1.3rem);
       line-height: 1.65;
-      color: #4b4859;
-      margin-bottom: 2.25rem;
+      color: #383545;
+      max-width: 820px;
+      margin-bottom: 2.5rem;
+      font-weight: 500;
     }
 
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 1rem;
-      margin-bottom: 2rem;
+      gap: 1.25rem;
+      margin-bottom: 2.75rem;
     }
 
     .hero-trust-list {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      gap: 0.5rem 0.75rem;
-      font-size: 0.8125rem;
+      gap: 0.6rem 0.9rem;
+      font-size: 0.875rem;
       font-weight: 700;
       font-family: var(--font-display);
-      color: #6c687e;
+      color: #4b4759;
       text-transform: uppercase;
       letter-spacing: 0.04em;
     }
@@ -479,66 +475,78 @@
     .hero-trust-list span {
       display: inline-flex;
       align-items: center;
-      gap: 0.75rem;
+      gap: 0.9rem;
     }
 
     .hero-trust-list span:not(:last-child)::after {
       content: "•";
-      color: var(--purple-light);
+      color: var(--purple-deep);
     }
 
-    /* Abstract Financial Composition (CSS Visual) */
-    .hero-visual-card {
-      background: var(--purple-lavender);
-      border: 1px solid rgba(91, 33, 208, 0.2);
-      border-radius: 16px;
-      padding: clamp(1.5rem, 3vw, 2.5rem);
+    .hero-micro-disclaimer {
+      margin-top: 2.75rem;
+      padding-top: 1.75rem;
+      border-top: 1px solid rgba(91, 33, 208, 0.16);
+      font-size: 0.8125rem;
+      line-height: 1.6;
+      color: #555163;
+      max-width: 880px;
+    }
+
+    /* ==========================================================================
+       SEPARATE REQUIREMENT-ASSESSMENT-MATCHING SECTION (DEDICATED LIFECYCLE)
+       ========================================================================== */
+    .section-lifecycle {
+      background-color: var(--white);
+      padding: clamp(3.5rem, 6vw, 6rem) 0;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .lifecycle-header {
+      margin-bottom: 3rem;
+    }
+
+    .flow-horizontal-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1.25rem;
       position: relative;
-      box-shadow: 0 20px 40px rgba(91, 33, 208, 0.08);
-      overflow: hidden;
     }
 
-    .hero-visual-card::before {
+    .flow-horizontal-grid::before {
       content: "";
       position: absolute;
-      top: -30%;
-      right: -20%;
-      width: 320px;
-      height: 320px;
-      background: radial-gradient(circle, rgba(109, 53, 232, 0.15) 0%, transparent 70%);
-      pointer-events: none;
+      top: 36px;
+      left: 30px;
+      right: 30px;
+      height: 2px;
+      background: repeating-linear-gradient(to right, var(--purple-light) 0, var(--purple-light) 8px, transparent 8px, transparent 16px);
+      z-index: 1;
     }
 
-    .flow-diagram {
-      display: flex;
-      flex-direction: column;
-      gap: 1.1rem;
+    .flow-card-node {
+      background: var(--soft-gray);
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+      padding: 1.5rem 1.2rem;
       position: relative;
       z-index: 2;
-    }
-
-    .flow-step-node {
+      transition: all var(--transition-fast);
       display: flex;
-      align-items: center;
-      gap: 1.2rem;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .flow-card-node:hover {
       background: var(--white);
-      border: 1px solid rgba(91, 33, 208, 0.15);
-      border-radius: 10px;
-      padding: 0.95rem 1.25rem;
-      box-shadow: 0 4px 12px rgba(17, 16, 24, 0.04);
-      position: relative;
-      transition: transform var(--transition-fast), border-color var(--transition-fast);
-    }
-
-    .flow-step-node:hover {
-      transform: translateX(6px);
       border-color: var(--purple-deep);
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(91, 33, 208, 0.08);
     }
 
-    .flow-icon-box {
-      width: 42px;
-      height: 42px;
-      min-width: 42px;
+    .flow-step-num {
+      width: 44px;
+      height: 44px;
       background: var(--purple-deep);
       color: var(--white);
       border-radius: 8px;
@@ -546,46 +554,24 @@
       align-items: center;
       justify-content: center;
       font-family: var(--font-display);
-      font-weight: 700;
-      font-size: 0.9rem;
-    }
-
-    .flow-node-content {
-      flex: 1;
+      font-weight: 800;
+      font-size: 1rem;
     }
 
     .flow-node-title {
       font-family: var(--font-display);
-      font-size: 0.9rem;
+      font-size: 1.05rem;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.02em;
       color: var(--near-black);
       line-height: 1.2;
     }
 
     .flow-node-sub {
-      font-size: 0.78rem;
-      color: #676378;
-    }
-
-    .flow-connector-line {
-      position: absolute;
-      left: 36px;
-      top: 30px;
-      bottom: 30px;
-      width: 2px;
-      background: repeating-linear-gradient(to bottom, var(--purple-light) 0, var(--purple-light) 6px, transparent 6px, transparent 12px);
-      z-index: 1;
-    }
-
-    .hero-micro-disclaimer {
-      margin-top: 2rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid var(--border-light);
-      font-size: 0.8125rem;
-      line-height: 1.55;
-      color: #6e6b7d;
+      font-size: 0.85rem;
+      color: #555263;
+      line-height: 1.5;
     }
 
     /* ==========================================================================
@@ -653,7 +639,7 @@
     }
 
     /* ==========================================================================
-       GEOGRAPHIC MARKETS SECTION (NO MAP IMAGE / NO ROUTE)
+       GEOGRAPHIC MARKETS SECTION (NON-MAP ARCHITECTURE)
        ========================================================================== */
     .section-markets {
       background-color: var(--purple-lavender);
@@ -719,7 +705,7 @@
       color: #656173;
     }
 
-    /* Clean Matrix & Footprint Architecture (Non-Map Alternative) */
+    /* Key Hub Matrix Card */
     .footprint-matrix-card {
       background: var(--white);
       border-radius: 16px;
@@ -1770,7 +1756,6 @@
        MEDIA QUERIES (GENUINE MOBILE-FIRST HARDENING)
        ========================================================================== */
     @media (max-width: 1024px) {
-      .hero-grid,
       .about-layout,
       .markets-wrapper,
       .spotlight-grid,
@@ -1782,6 +1767,13 @@
 
       .footer-grid {
         grid-template-columns: repeat(2, 1fr);
+      }
+
+      .flow-horizontal-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .flow-horizontal-grid::before {
+        display: none;
       }
 
       .process-timeline {
@@ -1812,6 +1804,10 @@
 
       .solutions-accordion-mobile {
         display: flex;
+      }
+
+      .flow-horizontal-grid {
+        grid-template-columns: 1fr;
       }
 
       .process-timeline {
@@ -1930,88 +1926,93 @@
 
   <main>
     <!-- ==========================================================================
-         HERO SECTION (WITH IMAGE & SUBTLE WHITE GRADIENT)
+         HERO SECTION (LESSER GRADIENT OVERLAY, BG IMAGE RESTRICTED HERE)
          ========================================================================== -->
     <section class="hero-section" id="home">
-      <div class="container">
-        <div class="hero-grid">
-          
-          <div class="hero-content">
-            <span class="eyebrow">FINANCE & FUNDING SOLUTIONS</span>
-            <h1 class="hero-headline">
-              FUNDING<br>
-              STRUCTURED<br>
-              AROUND <span class="text-purple">YOUR REQUIREMENTS.</span>
-            </h1>
-            <p class="hero-desc">
-              FUNDMORE is the finance and funding division of AR Consultancy, providing structured financial assistance and lender coordination to individuals, entrepreneurs, businesses, manufacturers, builders, professionals, and project promoters.
-            </p>
-            
-            <div class="hero-actions">
-              <a href="#contact" class="btn btn-primary">APPLY FOR FINANCE</a>
-              <a href="#contact" class="btn btn-secondary">DISCUSS YOUR FUNDING REQUIREMENT</a>
-            </div>
+      <div class="container hero-container">
+        <span class="eyebrow">FINANCE & FUNDING SOLUTIONS</span>
+        <h1 class="hero-headline">
+          FUNDING<br>
+          STRUCTURED<br>
+          AROUND <span class="text-purple">YOUR REQUIREMENTS.</span>
+        </h1>
+        <p class="hero-desc">
+          FUNDMORE is the finance and funding division of AR Consultancy, providing structured financial assistance and lender coordination to individuals, entrepreneurs, businesses, manufacturers, builders, professionals, and project promoters.
+        </p>
+        
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary">APPLY FOR FINANCE</a>
+          <a href="#contact" class="btn btn-secondary">DISCUSS YOUR FUNDING REQUIREMENT</a>
+        </div>
 
-            <div class="hero-trust-list">
-              <span>Business Finance</span>
-              <span>Project Finance</span>
-              <span>MSME Funding</span>
-              <span>LAP</span>
-              <span>Machinery Finance</span>
-              <span>Home Loans</span>
-            </div>
-          </div>
-
-          <!-- Abstract Financial Composition -->
-          <div class="hero-visual-card" aria-hidden="true">
-            <div class="flow-connector-line"></div>
-            <div class="flow-diagram">
-              <div class="flow-step-node">
-                <div class="flow-icon-box">01</div>
-                <div class="flow-node-content">
-                  <div class="flow-node-title">Requirement</div>
-                  <div class="flow-node-sub">Consultative discussion & scoping</div>
-                </div>
-              </div>
-
-              <div class="flow-step-node">
-                <div class="flow-icon-box">02</div>
-                <div class="flow-node-content">
-                  <div class="flow-node-title">Assessment</div>
-                  <div class="flow-node-sub">Profile, financials & security review</div>
-                </div>
-              </div>
-
-              <div class="flow-step-node">
-                <div class="flow-icon-box">03</div>
-                <div class="flow-node-content">
-                  <div class="flow-node-title">Matching</div>
-                  <div class="flow-node-sub">Banking & NBFC policy identification</div>
-                </div>
-              </div>
-
-              <div class="flow-step-node">
-                <div class="flow-icon-box">04</div>
-                <div class="flow-node-content">
-                  <div class="flow-node-title">Application</div>
-                  <div class="flow-node-sub">End-to-end documentation & credit tracking</div>
-                </div>
-              </div>
-
-              <div class="flow-step-node">
-                <div class="flow-icon-box">05</div>
-                <div class="flow-node-content">
-                  <div class="flow-node-title">Funding</div>
-                  <div class="flow-node-sub">Sanction & disbursement facilitation</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
+        <div class="hero-trust-list">
+          <span>Business Finance</span>
+          <span>Project Finance</span>
+          <span>MSME Funding</span>
+          <span>LAP</span>
+          <span>Machinery Finance</span>
+          <span>Home Loans</span>
         </div>
 
         <div class="hero-micro-disclaimer">
           <strong>Important Note:</strong> All funding facilities are subject to applicant eligibility, documentation, credit assessment, lender policies, applicable terms, and final approval by the respective Bank or NBFC.
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SEPARATED FUNDING LIFECYCLE (REQUIREMENT → ASSESSMENT → MATCHING → APPLICATION → FUNDING)
+         ========================================================================== -->
+    <section class="section-lifecycle" id="funding-lifecycle">
+      <div class="container">
+        <div class="lifecycle-header">
+          <span class="eyebrow">INTEGRATED FACILITATION ARCHITECTURE</span>
+          <h2 class="section-title">THE FUNDING LIFECYCLE</h2>
+          <p class="section-desc" style="margin-bottom: 0;">
+            A transparent progression translating complex capital requirements into lender-aligned financial applications.
+          </p>
+        </div>
+
+        <div class="flow-horizontal-grid">
+          <div class="flow-card-node">
+            <div class="flow-step-num">01</div>
+            <div>
+              <div class="flow-node-title">Requirement</div>
+              <div class="flow-node-sub">Consultative discussion and detailed capital scoping.</div>
+            </div>
+          </div>
+
+          <div class="flow-card-node">
+            <div class="flow-step-num">02</div>
+            <div>
+              <div class="flow-node-title">Assessment</div>
+              <div class="flow-node-sub">Profile, financial statements, and security evaluation.</div>
+            </div>
+          </div>
+
+          <div class="flow-card-node">
+            <div class="flow-step-num">03</div>
+            <div>
+              <div class="flow-node-title">Matching</div>
+              <div class="flow-node-sub">Identification of suitable Banking and NBFC criteria.</div>
+            </div>
+          </div>
+
+          <div class="flow-card-node">
+            <div class="flow-step-num">04</div>
+            <div>
+              <div class="flow-node-title">Application</div>
+              <div class="flow-node-sub">End-to-end documentation filing and credit coordination.</div>
+            </div>
+          </div>
+
+          <div class="flow-card-node">
+            <div class="flow-step-num">05</div>
+            <div>
+              <div class="flow-node-title">Funding</div>
+              <div class="flow-node-sub">Institutional credit appraisal, sanction, and disbursement.</div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -2056,7 +2057,7 @@
     </section>
 
     <!-- ==========================================================================
-         GEOGRAPHIC MARKETS SECTION (REPLACED MAP WITH CLEAN MATRIX)
+         GEOGRAPHIC MARKETS SECTION (KEY HUB MATRIX & FOOTPRINT)
          ========================================================================== -->
     <section class="section-markets">
       <div class="container">
