@@ -1334,12 +1334,18 @@
       border-bottom: 1px solid var(--border-light);
     }
 
-    .team-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2rem;
-      margin-top: 2.5rem;
-    }
+   .team-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+@media (max-width: 600px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+}
 
     .team-card {
       border: 1px solid var(--border-light);
@@ -2573,54 +2579,76 @@
       </div>
     </section>
 
-    <!-- ==========================================================================
-       MANAGEMENT TEAM
-       ========================================================================== -->
-    <section class="section-team">
-      <div class="container">
-        <span class="eyebrow">CONSULTING LEADERSHIP</span>
-        <h2 class="section-title">
-          EXPERIENCED PROFESSIONALS<br>
-          SUPPORTING YOUR FUNDING JOURNEY.
-        </h2>
+    <!-- MANAGEMENT TEAM -->
+<section class="section-team">
+  <div class="container">
+    <span class="eyebrow">CONSULTING LEADERSHIP</span>
 
-        <div class="team-grid">
-          <!-- Member 1 -->
-          <div class="team-card">
-            <div class="team-header-row">
-              <div class="team-initials">AB</div>
-              <div>
-                <h3 class="team-name">Mr. Ankit Bhandari</h3>
-                <span class="team-role">Financial Consultant</span>
-              </div>
-            </div>
-            <p class="team-detail">
-              Brings 15 years of professional experience in funding solutions and taxation advisory, assisting commercial entities in structuring proposals aligned with regulatory and lender norms.
-            </p>
-            <div class="team-zone-badge">
-              Primary Zone: Surat & South Gujarat
-            </div>
-          </div>
+    <h2 class="section-title">
+      MEET OUR TEAM<br>
+      EXPERIENCED PROFESSIONALS.
+    </h2>
 
-          <!-- Member 2 -->
-          <div class="team-card">
-            <div class="team-header-row">
-              <div class="team-initials">AV</div>
-              <div>
-                <h3 class="team-name">Dr. Aryankumar Verma (Ph.D)</h3>
-                <span class="team-role">Business Consultant</span>
-              </div>
-            </div>
-            <p class="team-detail">
-              15 years of professional experience in business consulting and funding-related support, guiding enterprises on project viability, capital requirements, and institutional credit coordination.
-            </p>
-            <div class="team-zone-badge">
-              Coverage: Surat and Madhya Pradesh
-            </div>
+    <div class="team-grid">
+
+      <div class="team-card">
+        <div class="team-header-row">
+          <div class="team-initials">PB</div>
+          <div>
+            <h3 class="team-name">Pankaj Bagwan</h3>
+            <span class="team-role">Founder</span>
           </div>
         </div>
+        <p class="team-detail">
+          25 years of experience in the finance industry.
+        </p>
+        <div class="team-zone-badge">
+          Based in Madhya Pradesh (M.P.)
+        </div>
       </div>
-    </section>
+
+      <div class="team-card">
+        <div class="team-header-row">
+          <div class="team-initials">AV</div>
+          <div>
+            <h3 class="team-name">Dr. Aryankumar Verma</h3>
+            <span class="team-role">Business Consultant &amp; Co-Founder</span>
+          </div>
+        </div>
+        <p class="team-detail">
+          Specializes in business consulting and strategic advisory.
+        </p>
+      </div>
+
+      <div class="team-card">
+        <div class="team-header-row">
+          <div class="team-initials">KK</div>
+          <div>
+            <h3 class="team-name">Adv. Kiran A. Kushwaha</h3>
+            <span class="team-role">Legal Consultant</span>
+          </div>
+        </div>
+        <p class="team-detail">
+          10 years of experience in business law and corporate law.
+        </p>
+      </div>
+
+      <div class="team-card">
+        <div class="team-header-row">
+          <div class="team-initials">AK</div>
+          <div>
+            <h3 class="team-name">Aniket Kumar</h3>
+            <span class="team-role">Business Consultant</span>
+          </div>
+        </div>
+        <p class="team-detail">
+          10 years of experience in the finance industry.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
 
     <!-- ==========================================================================
        ELIGIBILITY & DOCUMENTATION
