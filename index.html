@@ -13,7 +13,8 @@
   <meta property="og:image" content="images/IMG-20260926-WA0002.jpg">
   <link rel="canonical" href="#">
 
-  
+  <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -1381,21 +1382,25 @@ nav {
       gap: 1.25rem;
     }
 
-    .team-initials {
-      width: 64px;
-      height: 64px;
-      min-width: 64px;
-      background: var(--purple-deep);
-      color: var(--white);
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: var(--font-display);
-      font-weight: 800;
-      font-size: 1.35rem;
-      letter-spacing: 0.05em;
-    }
+  
+.team-icon {
+  width: 64px;
+  height: 64px;
+  min-width: 64px;
+  background: var(--purple-deep);
+  color: var(--white);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.team-card:hover .team-icon {
+  transform: translateY(-3px);
+}
+
 
     .team-name {
       font-family: var(--font-display);
@@ -2597,7 +2602,8 @@ nav {
       </div>
     </section>
 
-    <!-- MANAGEMENT TEAM -->
+   
+<!-- MANAGEMENT TEAM -->
 <section class="section-team">
   <div class="container">
     <span class="eyebrow">CONSULTING LEADERSHIP</span>
@@ -2609,9 +2615,12 @@ nav {
 
     <div class="team-grid">
 
+      <!-- Founder -->
       <div class="team-card">
         <div class="team-header-row">
-          <div class="team-initials">PB</div>
+          <div class="team-icon">
+            <i class="fa-solid fa-briefcase"></i>
+          </div>
           <div>
             <h3 class="team-name">Pankaj Bagwan</h3>
             <span class="team-role">Founder</span>
@@ -2625,9 +2634,12 @@ nav {
         </div>
       </div>
 
+      <!-- Business Consultant & Co-Founder -->
       <div class="team-card">
         <div class="team-header-row">
-          <div class="team-initials">AV</div>
+          <div class="team-icon">
+            <i class="fa-solid fa-handshake"></i>
+          </div>
           <div>
             <h3 class="team-name">Dr. Aryankumar Verma</h3>
             <span class="team-role">Business Consultant &amp; Co-Founder</span>
@@ -2638,9 +2650,12 @@ nav {
         </p>
       </div>
 
+      <!-- Legal Consultant -->
       <div class="team-card">
         <div class="team-header-row">
-          <div class="team-initials">KK</div>
+          <div class="team-icon">
+            <i class="fa-solid fa-scale-balanced"></i>
+          </div>
           <div>
             <h3 class="team-name">Adv. Kiran A. Kushwaha</h3>
             <span class="team-role">Legal Consultant</span>
@@ -2651,9 +2666,12 @@ nav {
         </p>
       </div>
 
+      <!-- Business Consultant -->
       <div class="team-card">
         <div class="team-header-row">
-          <div class="team-initials">AK</div>
+          <div class="team-icon">
+            <i class="fa-solid fa-chart-line"></i>
+          </div>
           <div>
             <h3 class="team-name">Aniket Kumar</h3>
             <span class="team-role">Business Consultant</span>
@@ -2667,6 +2685,7 @@ nav {
     </div>
   </div>
 </section>
+
 
     <!-- ==========================================================================
        ELIGIBILITY & DOCUMENTATION
