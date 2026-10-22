@@ -3201,6 +3201,38 @@ nav {
     </div>
   </footer>
 
+  <!-- Consultation Popup -->
+  <div class="consultation-modal" id="consultation-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="consultation-title">
+    <div class="consultation-modal-backdrop" data-close-consultation></div>
+    <div class="consultation-modal-panel">
+      <button type="button" class="consultation-modal-close" data-close-consultation aria-label="Close consultation form">&times;</button>
+      <span class="eyebrow">DIRECT ENGAGEMENT</span>
+      <h2 id="consultation-title">Book a Consultation</h2>
+      <p>Share your details and requirement. Our team will get in touch with you.</p>
+      <form id="consultation-form">
+        <label for="consult-name">Full Name / Organization</label>
+        <input id="consult-name" name="name" type="text" placeholder="e.g. Ramesh Patel (Patel Manufacturing)" required>
+
+        <label for="consult-phone">Phone Number</label>
+        <input id="consult-phone" name="phone" type="tel" placeholder="e.g. +91 98765 43210" required>
+
+        <label for="consult-service">Service Requirement</label>
+        <select id="consult-service" name="service" required>
+          <option value="" disabled selected>Select a service</option>
+          <option value="Funding">Funding</option>
+          <option value="Management">Management</option>
+          <option value="Government Funding">Government Funding</option>
+          <option value="Join As Team Members">Join As Team Members</option>
+        </select>
+
+        <label for="consult-details">Brief Outline / Details</label>
+        <textarea id="consult-details" name="details" rows="3" placeholder="Briefly describe your requirement..."></textarea>
+
+        <button type="submit" class="btn btn-white consultation-submit">SUBMIT CONSULTATION REQUEST</button>
+      </form>
+    </div>
+  </div>
+
   <!-- ==========================================================================
        VANILLA JAVASCRIPT
        ========================================================================== -->
@@ -3209,6 +3241,7 @@ nav {
       const consultationModal = document.getElementById('consultation-modal');
       const consultationOpen = document.getElementById('open-consultation');
       const closeConsultation = () => {
+        if (!consultationModal) return;
         consultationModal.classList.remove('is-open');
         consultationModal.setAttribute('aria-hidden', 'true');
         document.body.classList.remove('consultation-modal-open');
