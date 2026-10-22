@@ -463,7 +463,7 @@ nav {
     .hero-section {
       background-color: var(--white);
       background-image: 
-        linear-gradient(rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.85)),
+        linear-gradient(rgba(255, 255, 255, 0.52), rgba(255, 255, 255, 0.68)),
         url('images/file_00000000993482078100c54f52b8c023.png');
       background-position: center center;
       background-size: cover;
@@ -1768,6 +1768,22 @@ nav {
       color: var(--purple-lavender);
     }
 
+
+    /* Consultation form popup */
+    .consultation-modal { position: fixed; inset: 0; z-index: 2000; display: none; align-items: center; justify-content: center; padding: 1rem; }
+    .consultation-modal.is-open { display: flex; }
+    .consultation-modal-backdrop { position: absolute; inset: 0; background: rgba(5, 12, 26, 0.68); }
+    .consultation-modal-panel { position: relative; z-index: 1; width: min(100%, 560px); max-height: 90vh; overflow-y: auto; background: #fff; color: #0b1930; padding: clamp(1.5rem, 4vw, 2.5rem); box-shadow: 0 24px 80px rgba(0,0,0,.25); }
+    .consultation-modal-close { position: absolute; top: .7rem; right: .9rem; border: 0; background: transparent; color: #64748b; font-size: 2rem; line-height: 1; cursor: pointer; }
+    .consultation-modal-panel h2 { margin: 1rem 0 .5rem; font-size: clamp(1.7rem, 4vw, 2.2rem); }
+    .consultation-modal-panel p { color: #64748b; line-height: 1.6; margin-bottom: 1.4rem; }
+    .consultation-modal-panel form { display: flex; flex-direction: column; gap: .55rem; }
+    .consultation-modal-panel label { margin-top: .55rem; font-size: .78rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+    .consultation-modal-panel input, .consultation-modal-panel select, .consultation-modal-panel textarea { width: 100%; padding: .9rem 1rem; border: 1px solid #dedbd5; background: #faf9f7; color: #0b1930; font: inherit; border-radius: 0; }
+    .consultation-modal-panel textarea { resize: vertical; }
+    .consultation-submit { width: 100%; margin-top: 1rem; }
+    body.consultation-modal-open { overflow: hidden; }
+
     /* ==========================================================================
        FOOTER
        ========================================================================== */
@@ -1825,6 +1841,11 @@ nav {
       flex-direction: column;
       gap: 0.65rem;
       font-size: 0.875rem;
+    }
+
+    .footer-links a {
+      color: #FFFFFF;
+      font-weight: 700;
     }
 
     .footer-links a:hover {
@@ -3077,7 +3098,7 @@ nav {
 
         <div class="cta-buttons-wrap">
           <a href="tel:+919106530248" class="btn btn-white">APPLY FOR FINANCE</a>
-          <a href="mailto:info@funmore.co.in" class="btn btn-secondary-white">DISCUSS YOUR REQUIREMENT</a>
+          <a href="#consultation-modal" class="btn btn-secondary-white" id="open-consultation">BOOK CONSULTATION</a>
         </div>
 
         <div class="cta-contact-strip">
@@ -3158,7 +3179,8 @@ nav {
               <strong>Email:</strong><br>
               <a href="mailto:info@funmore.co.in">info@funmore.co.in</a><br>
               <a href="mailto:management@funmore.co.in">management@funmore.co.in</a><br>
-              <a href="mailto:funding@funmore.co.in">funding@funmore.co.in</a>
+              <a href="mailto:funding@funmore.co.in">funding@funmore.co.in</a><br>
+              <a href="mailto:fundmoresurat@gmail.com">fundmoresurat@gmail.com</a>
             </li>
             <li style="margin-top: 0.75rem; font-size: 0.8rem; line-height: 1.5; color: #737082;">
               Assistance subject to eligibility, documentation, and lender terms.
@@ -3184,6 +3206,39 @@ nav {
        ========================================================================== -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
+      const consultationModal = document.getElementById('consultation-modal');
+      const consultationOpen = document.getElementById('open-consultation');
+      const closeConsultation = () => {
+        consultationModal.classList.remove('is-open');
+        consultationModal.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('consultation-modal-open');
+      };
+      if (consultationOpen && consultationModal) {
+        consultationOpen.addEventListener('click', event => {
+          event.preventDefault();
+          consultationModal.classList.add('is-open');
+          consultationModal.setAttribute('aria-hidden', 'false');
+          document.body.classList.add('consultation-modal-open');
+          document.getElementById('consult-name').focus();
+        });
+        consultationModal.querySelectorAll('[data-close-consultation]').forEach(el => el.addEventListener('click', closeConsultation));
+        document.addEventListener('keydown', event => { if (event.key === 'Escape') closeConsultation(); });
+        document.getElementById('consultation-form').addEventListener('submit', event => {
+          event.preventDefault();
+          const form = event.currentTarget;
+          const data = new FormData(form);
+          const subject = encodeURIComponent('Consultation Request - ' + data.get('service'));
+          const body = encodeURIComponent(
+            'Name / Organization: ' + data.get('name') + '\n' +
+            'Phone: ' + data.get('phone') + '\n' +
+            'Service Requirement: ' + data.get('service') + '\n' +
+            'Details: ' + (data.get('details') || 'Not provided')
+          );
+          window.location.href = 'mailto:info@funmore.co.in?subject=' + subject + '&body=' + body;
+          closeConsultation();
+        });
+      }
+
       // 1. Sticky Header Compactness on Scroll
       const header = document.getElementById('site-header');
       window.addEventListener('scroll', () => {
