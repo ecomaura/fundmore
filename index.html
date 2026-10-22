@@ -113,9 +113,16 @@
   }
 
   .partner-card img {
-  max-width: 170px;
-  max-height: 65px;
-}
+    max-width: 200px;
+    max-height: 90px;
+    width: 100%;
+    height: auto;
+  }
+
+  .partner-card {
+    padding: 1rem;
+    min-height: 150px;
+  }
 }
 
     .container {
@@ -1824,6 +1831,32 @@ nav {
       color: var(--white);
     }
 
+    .footer-socials {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-top: 1.25rem;
+    }
+
+    .footer-socials a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.5rem;
+      height: 2.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      color: var(--white);
+      text-decoration: none;
+      transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+    }
+
+    .footer-socials a:hover {
+      background-color: var(--white);
+      border-color: var(--white);
+      color: var(--near-black);
+    }
+
     .footer-bottom {
       border-top: 1px solid rgba(255, 255, 255, 0.08);
       padding-top: 2rem;
@@ -3044,7 +3077,7 @@ nav {
 
         <div class="cta-buttons-wrap">
           <a href="tel:+919106530248" class="btn btn-white">APPLY FOR FINANCE</a>
-          <a href="mailto:fundmoresurat@gmail.com" class="btn btn-secondary-white">DISCUSS YOUR REQUIREMENT</a>
+          <a href="mailto:info@funmore.co.in" class="btn btn-secondary-white">DISCUSS YOUR REQUIREMENT</a>
         </div>
 
         <div class="cta-contact-strip">
@@ -3053,9 +3086,9 @@ nav {
             <span>+91 91065 30248</span>
           </a>
           <span style="opacity: 0.4;">|</span>
-          <a href="mailto:fundmoresurat@gmail.com">
+          <a href="mailto:info@funmore.co.in">
             <span>Email:</span>
-            <span>fundmoresurat@gmail.com</span>
+            <span>info@funmore.co.in</span>
           </a>
         </div>
       </div>
@@ -3076,6 +3109,17 @@ nav {
           <p style="font-size: 0.85rem; line-height: 1.6; color: #878496;">
             Providing professional consultation, financial document structuring, and Banking / NBFC coordination to help individuals, enterprises, and promoters navigate funding.
           </p>
+          <div class="footer-socials" aria-label="Social media links">
+            <a href="https://www.instagram.com/fundmore_india?dlrf=MWlzZndxamRxdjIzaQ%3D%3D&amp;utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <i class="fab fa-instagram" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.facebook.com/share/14usoXX56Fd/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <i class="fab fa-facebook-f" aria-hidden="true"></i>
+            </a>
+            <a href="https://youtube.com/@fundmore_surat?si=31OYcRFIfs0LpotO" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+              <i class="fab fa-youtube" aria-hidden="true"></i>
+            </a>
+          </div>
         </div>
 
         <div>
@@ -3112,7 +3156,9 @@ nav {
             </li>
             <li style="margin-top: 0.5rem;">
               <strong>Email:</strong><br>
-              <a href="mailto:fundmoresurat@gmail.com">fundmoresurat@gmail.com</a>
+              <a href="mailto:info@funmore.co.in">info@funmore.co.in</a><br>
+              <a href="mailto:management@funmore.co.in">management@funmore.co.in</a><br>
+              <a href="mailto:funding@funmore.co.in">funding@funmore.co.in</a>
             </li>
             <li style="margin-top: 0.75rem; font-size: 0.8rem; line-height: 1.5; color: #737082;">
               Assistance subject to eligibility, documentation, and lender terms.
